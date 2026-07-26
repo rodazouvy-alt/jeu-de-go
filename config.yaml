@@ -1,0 +1,44 @@
+# Configuration Analyse & Progression Go
+# Tout est local — rien ne part sur internet sauf la sync KGS.
+
+player:
+  kgs_username: Rodolphe
+  rank: 3d
+  color_preference: both  # analyser les coups des deux couleurs
+
+katago:
+  executable: E:/lizzie/katago.exe
+  model: E:/lizzie/KataGo28b.gz
+  config: config/katago_quick.cfg
+  working_dir: E:/lizzie
+  startup_wait_seconds: 30
+  num_analysis_threads: 8
+  # Pass 1 rapide : détection des blunders
+  quick_max_visits: 100
+  # Pass 2 profond : parties suspectes
+  deep_max_visits: 2000
+
+thresholds:
+  # Seuils calibrés 3 dan (perte en points)
+  inaccuracy: 0.5
+  mistake: 1.5
+  blunder: 4.0
+  mega_blunder: 8.0
+
+kgs:
+  base_url: https://www.gokgs.com
+  files_url: https://files.gokgs.com
+  request_delay_seconds: 1.5
+  include_all_accounts: true
+  board_size_filter: 19
+
+paths:
+  data_dir: data
+  sgf_dir: data/sgf
+  analysis_dir: data/analysis
+  db_path: data/db/go_progress.db
+  reports_dir: data/reports
+
+dashboard:
+  host: 127.0.0.1
+  port: 8787

@@ -1,0 +1,23 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Données locales (trop volumineuses pour git)
+data/sgf/
+data/analysis/
+data/db/
+data/reports/
+data/cache/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config locale optionnelle
+config.local.yaml
