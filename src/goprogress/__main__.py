@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from goprogress.analyzer import GameAnalyzer
 from goprogress.config import load_config, ensure_data_dirs, resolve_path
 from goprogress.db import Database
+from goprogress.katago_check import check_katago
 from goprogress.kgs_sync import KgsSync
 from goprogress.report import generate_report
 
@@ -59,6 +60,11 @@ def cmd_report(args: argparse.Namespace) -> None:
     if args.open:
         webbrowser.open(path.as_uri())
     db.close()
+
+
+def cmd_katago_check(args: argparse.Namespace) -> None:
+    cfg = load_config()
+    raise SystemExit(check_katago(cfg, benchmark=not args.no_benchmark))
 
 
 def cmd_status(args: argparse.Namespace) -> None:
@@ -188,6 +194,10 @@ def main() -> None:
 
     p_status = sub.add_parser("status", help="Afficher le statut")
     p_status.set_defaults(func=cmd_status)
+
+    p_katago = sub.add_parser("katago-check", help="Vérifier config et débit GPU KataGo")
+    p_katago.add_argument("--no-benchmark", action="store_true", help="Sans test de débit")
+    p_katago.set_defaults(func=cmd_katago_check)
 
     p_serve = sub.add_parser("serve", help="Lancer dashboard local")
     p_serve.set_defaults(func=cmd_serve)

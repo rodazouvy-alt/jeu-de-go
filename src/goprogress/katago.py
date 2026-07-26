@@ -14,7 +14,7 @@ class KataGoAnalysis:
     """Wrapper autour du KataGo Analysis Engine (stdin/stdout JSON)."""
 
     STARTUP_TIMEOUT = 120
-    STARTUP_MARKERS = ("ready to begin", "analysis engine starting", "loaded neural net")
+    STARTUP_MARKERS = ("ready to begin", "loaded neural net")
 
     def __init__(self, cfg: dict[str, Any], *, analysis_config: str | None = None):
         katago = cfg["katago"]
@@ -32,6 +32,7 @@ class KataGoAnalysis:
         self._lock = threading.Lock()
         self._ready = threading.Event()
         self._stderr_thread: threading.Thread | None = None
+        self.startup_log: list[str] = []
 
     def start(self) -> None:
         if self._proc and self._proc.poll() is None:
@@ -64,10 +65,14 @@ class KataGoAnalysis:
     def _consume_stderr(self) -> None:
         assert self._proc and self._proc.stderr
         for line in self._proc.stderr:
+            self.startup_log.append(line.rstrip())
             low = line.lower()
             if any(m in low for m in self.STARTUP_MARKERS):
                 self._ready.set()
-            if "loaded neural net" in low or "cuda backend" in low:
+            if "loaded neural net" in low:
+                time.sleep(0.5)
+                self._ready.set()
+            elif "cuda backend" in low:
                 time.sleep(1)
                 self._ready.set()
 

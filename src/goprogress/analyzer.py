@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import time
 from pathlib import Path
 from typing import Any
 
@@ -9,6 +10,25 @@ from .katago import KataGoAnalysis
 from .sgf_parse import parse_sgf, game_phase, severity_for_loss, player_color
 
 SEVERITY_ORDER = ("ok", "inaccuracy", "mistake", "blunder", "mega_blunder")
+
+
+def _print_katago_startup(engine: KataGoAnalysis) -> None:
+    for line in engine.startup_log:
+        low = line.lower()
+        if "running with following config" in low:
+            continue
+        if any(
+            key in line
+            for key in (
+                "numSearchThreads",
+                "nnMaxBatchSize",
+                "numAnalysisThreads",
+                "cuda",
+                "loaded neural net",
+                "analysis engine",
+            )
+        ):
+            print(f"  {line}", flush=True)
 
 
 class GameAnalyzer:
@@ -42,31 +62,55 @@ class GameAnalyzer:
         analyzed = 0
         quick_config = self.katago_cfg["config"]
         deep_config = self.katago_cfg.get("deep_config", quick_config)
+        quick_engine: KataGoAnalysis | None = None
+        deep_engine: KataGoAnalysis | None = None
 
-        for row in pending:
-            game_id = row["id"]
-            sgf_path = resolve_path(row["sgf_path"])
-            print(f"\nAnalyse [{mode}] partie #{game_id}: {sgf_path.name}")
-            try:
-                if mode == "deep":
-                    if not row["analyzed_quick"]:
-                        print("  → pass quick préalable...")
-                        with KataGoAnalysis(self.cfg, analysis_config=quick_config) as qeng:
+        def quick() -> KataGoAnalysis:
+            nonlocal quick_engine
+            if quick_engine is None:
+                print("Démarrage KataGo (quick) — chargement du modèle une seule fois...", flush=True)
+                quick_engine = KataGoAnalysis(self.cfg, analysis_config=quick_config)
+                quick_engine.start()
+                _print_katago_startup(quick_engine)
+            return quick_engine
+
+        def deep() -> KataGoAnalysis:
+            nonlocal deep_engine
+            if deep_engine is None:
+                print("Démarrage KataGo (deep) — chargement du modèle une seule fois...", flush=True)
+                deep_engine = KataGoAnalysis(self.cfg, analysis_config=deep_config)
+                deep_engine.start()
+                _print_katago_startup(deep_engine)
+            return deep_engine
+
+        try:
+            for row in pending:
+                game_id = row["id"]
+                sgf_path = resolve_path(row["sgf_path"])
+                print(f"\nAnalyse [{mode}] partie #{game_id}: {sgf_path.name}", flush=True)
+                try:
+                    if mode == "deep":
+                        if not row["analyzed_quick"]:
+                            print("  → pass quick préalable...", flush=True)
                             self._analyze_one(
-                                qeng, game_id, sgf_path,
+                                quick(), game_id, sgf_path,
                                 self.katago_cfg["quick_max_visits"], "quick",
                             )
-                    with KataGoAnalysis(self.cfg, analysis_config=deep_config) as deng:
-                        self._analyze_deep(deng, game_id, sgf_path)
-                else:
-                    with KataGoAnalysis(self.cfg, analysis_config=quick_config) as engine:
+                        self._analyze_deep(deep(), game_id, sgf_path)
+                    else:
                         self._analyze_one(
-                            engine, game_id, sgf_path,
+                            quick(), game_id, sgf_path,
                             self.katago_cfg["quick_max_visits"], mode,
                         )
-                analyzed += 1
-            except Exception as exc:
-                print(f"  ERREUR: {exc}")
+                    analyzed += 1
+                except Exception as exc:
+                    print(f"  ERREUR: {exc}", flush=True)
+        finally:
+            if quick_engine is not None:
+                quick_engine.stop()
+            if deep_engine is not None:
+                deep_engine.stop()
+
         return analyzed
 
     def _analyze_deep(self, engine: KataGoAnalysis, game_id: int, sgf_path: Path) -> None:
@@ -217,7 +261,8 @@ class GameAnalyzer:
         my_color = player_color(parsed, self.username)
         n_moves = len(parsed.moves)
         eta = self._eta_seconds(max_visits, n_moves)
-        print(f"  {max_visits} visits × {n_moves} coups (~{eta}s)...")
+        print(f"  {max_visits} visits × {n_moves} coups (~{eta}s)...", flush=True)
+        t0 = time.perf_counter()
 
         responses = engine.analyze_game(
             moves=parsed.moves,
@@ -293,4 +338,7 @@ class GameAnalyzer:
             "SELECT COUNT(*) AS c FROM moves WHERE game_id = ? AND severity IN ('blunder','mega_blunder')",
             (game_id,),
         ).fetchone()["c"]
-        print(f"  Terminé — {blunders} blunder(s) détecté(s)")
+        print(
+            f"  Terminé — {blunders} blunder(s) détecté(s) ({time.perf_counter() - t0:.0f}s GPU)",
+            flush=True,
+        )
