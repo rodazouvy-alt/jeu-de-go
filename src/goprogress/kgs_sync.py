@@ -125,6 +125,10 @@ class KgsSync:
         return self.sgf_dir / str(year) / f"{month:02d}" / filename
 
     def sync_month(self, year: int, month: int, limit: int | None = None) -> int:
+        if limit is None and self.db.is_month_synced(year, month):
+            print(f"  Mois {year}-{month} déjà synchronisé — ignoré")
+            return 0
+
         html = self.fetch_month_page(year, month)
         games = self.parse_games_from_html(html, year, month)
         if limit:
@@ -165,10 +169,17 @@ class KgsSync:
             })
             count += 1
             print(f"  [{count}] partie #{game_id} -> {dest.name}")
+
+        if limit is None and count > 0:
+            self.db.mark_month_synced(year, month, count)
         return count
 
-    def sync_month_zip(self, year: int, month: int) -> int:
+    def sync_month_zip(self, year: int, month: int, *, force: bool = False) -> int:
         """Télécharge l'archive ZIP mensuelle KGS (plus rapide en masse)."""
+        if not force and self.db.is_month_synced(year, month):
+            print(f"  Mois {year}-{month} déjà synchronisé — ignoré")
+            return 0
+
         zip_url = (
             f"{self.base_url}/servlet/archives/en_US/"
             f"{self.username}-{year}-{month}.zip"
@@ -216,7 +227,33 @@ class KgsSync:
                 })
                 count += 1
         print(f"  {count} parties indexées depuis le ZIP")
+        if count > 0:
+            self.db.mark_month_synced(year, month, count)
         return count
+
+    def sync_all_months(
+        self,
+        *,
+        use_zip: bool = True,
+        force: bool = False,
+        recent_first: bool = True,
+    ) -> int:
+        months = self.list_months()
+        if recent_first:
+            months = list(reversed(months))
+        print(f"{len(months)} mois trouvés dans les archives KGS")
+        total = 0
+        for i, (year, month) in enumerate(months, 1):
+            print(f"\n[{i}/{len(months)}] === {year}-{month:02d} ===")
+            try:
+                if use_zip:
+                    total += self.sync_month_zip(year, month, force=force)
+                else:
+                    total += self.sync_month(year, month)
+            except httpx.HTTPError as exc:
+                print(f"  ERREUR mois {year}-{month}: {exc}")
+                continue
+        return total
 
     def sync_recent(self, limit: int = 10) -> int:
         """Sync rapide : les N dernières parties du mois courant."""

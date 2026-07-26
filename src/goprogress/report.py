@@ -32,6 +32,12 @@ def generate_report(db: Database, cfg: dict[str, Any]) -> Path:
 
     stats = db.stats_summary()
     blunders = db.top_blunders(limit=40, player=cfg["player"]["kgs_username"])
+    severity_stats = db.conn.execute("""
+        SELECT severity, COUNT(*) AS cnt, AVG(point_loss) AS avg_loss
+        FROM moves WHERE point_loss > 0 AND severity != 'ok'
+        GROUP BY severity
+        ORDER BY avg_loss DESC
+    """).fetchall()
     phase_stats = db.conn.execute("""
         SELECT phase, COUNT(*) AS cnt, AVG(point_loss) AS avg_loss, MAX(point_loss) AS max_loss
         FROM moves
@@ -71,6 +77,23 @@ def generate_report(db: Database, cfg: dict[str, Any]) -> Path:
           <td>{(p['max_loss'] or 0):.1f} pts</td>
         </tr>"""
 
+    severity_html = ""
+    sev_labels = {
+        "mega_blunder": "Méga-blunder",
+        "blunder": "Blunder",
+        "mistake": "Erreur",
+        "inaccuracy": "Imprécision",
+    }
+    for s in severity_stats:
+        sev = s["severity"] or "ok"
+        color = SEVERITY_COLORS.get(sev, "#666")
+        severity_html += f"""
+        <tr>
+          <td><span class="badge" style="background:{color}">{escape(sev_labels.get(sev, sev))}</span></td>
+          <td>{s['cnt']}</td>
+          <td>{(s['avg_loss'] or 0):.2f} pts</td>
+        </tr>"""
+
     html = f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -101,6 +124,12 @@ def generate_report(db: Database, cfg: dict[str, Any]) -> Path:
     <div class="card"><div class="num">{stats['blunders_total']}</div>blunders</div>
     <div class="card"><div class="num">{stats['avg_point_loss']}</div>perte moy. (pts)</div>
   </div>
+
+  <h2>Erreurs par sévérité</h2>
+  <table>
+    <tr><th>Niveau</th><th>Nombre</th><th>Perte moyenne</th></tr>
+    {severity_html or '<tr><td colspan="3">Pas encore de données</td></tr>'}
+  </table>
 
   <h2>Erreurs par phase de partie</h2>
   <table>

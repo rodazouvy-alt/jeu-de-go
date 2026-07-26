@@ -22,20 +22,15 @@ def cmd_sync(args: argparse.Namespace) -> None:
     sync = KgsSync(cfg, db)
     try:
         if args.zip and args.year and args.month:
-            count = sync.sync_month_zip(args.year, args.month)
+            count = sync.sync_month_zip(args.year, args.month, force=args.force)
         elif args.year and args.month:
             count = sync.sync_month(args.year, args.month, limit=args.limit)
         elif args.all_months:
-            months = sync.list_months()
-            print(f"{len(months)} mois trouvés dans les archives KGS")
-            total = 0
-            for year, month in months:
-                print(f"\n=== {year}-{month:02d} ===")
-                if args.zip:
-                    total += sync.sync_month_zip(year, month)
-                else:
-                    total += sync.sync_month(year, month)
-            count = total
+            count = sync.sync_all_months(
+                use_zip=args.zip,
+                force=args.force,
+                recent_first=not args.oldest_first,
+            )
         else:
             count = sync.sync_recent(limit=args.limit or 10)
         print(f"\nSync terminée : {count} partie(s) traitée(s)")
@@ -76,10 +71,44 @@ def cmd_status(args: argparse.Namespace) -> None:
     months = db.conn.execute(
         "SELECT year, month, COUNT(*) AS c FROM games GROUP BY year, month ORDER BY year DESC, month DESC LIMIT 12"
     ).fetchall()
+    pending = db.pending_analysis_count()
+    last_sync = db.get_sync_value("last_sync_at")
+    synced = db.synced_months_summary()
+    if last_sync:
+        print(f"\nDernière sync : {last_sync}")
+    print(f"Parties en attente d'analyse : {pending}")
+    if synced:
+        print(f"Mois synchronisés : {len(synced)}")
     if months:
         print("\nDerniers mois collectés :")
         for m in months:
             print(f"  {m['year']}-{m['month']:02d} : {m['c']} parties")
+    db.close()
+
+
+def cmd_pipeline(args: argparse.Namespace) -> None:
+    """Sync récent + analyse + rapport en une commande."""
+    cfg = load_config()
+    ensure_data_dirs(cfg)
+    db = Database(resolve_path(cfg["paths"]["db_path"]))
+    sync = KgsSync(cfg, db)
+    try:
+        print("=== 1/3 Sync parties récentes ===")
+        synced = sync.sync_recent(limit=args.sync_limit or 20)
+        print(f"  {synced} partie(s) synchronisée(s)")
+    finally:
+        sync.close()
+
+    analyzer = GameAnalyzer(cfg, db)
+    print("\n=== 2/3 Analyse KataGo ===")
+    analyzed = analyzer.analyze_pending(mode="quick", limit=args.analyze_limit or 5)
+    print(f"  {analyzed} partie(s) analysée(s)")
+
+    print("\n=== 3/3 Rapport HTML ===")
+    path = generate_report(db, cfg)
+    print(f"  {path}")
+    if args.open:
+        webbrowser.open(path.as_uri())
     db.close()
 
 
@@ -103,7 +132,17 @@ def cmd_serve(args: argparse.Namespace) -> None:
 
     @app.get("/api/stats")
     def api_stats():
-        return db.stats_summary()
+        return {
+            **db.stats_summary(),
+            "pending_analysis": db.pending_analysis_count(),
+            "last_sync": db.get_sync_value("last_sync_at"),
+            "synced_months": len(db.synced_months_summary()),
+        }
+
+    @app.get("/api/blunders")
+    def api_blunders():
+        rows = db.top_blunders(limit=20, player=cfg["player"]["kgs_username"])
+        return [dict(r) for r in rows]
 
     @app.get("/rapport")
     def rapport():
@@ -128,7 +167,15 @@ def main() -> None:
     p_sync.add_argument("--month", type=int)
     p_sync.add_argument("--zip", action="store_true", help="Archive ZIP mensuelle")
     p_sync.add_argument("--all-months", action="store_true", help="Tout l historique")
+    p_sync.add_argument("--force", action="store_true", help="Re-telecharger meme si deja fait")
+    p_sync.add_argument("--oldest-first", action="store_true", help="Du plus ancien au plus recent")
     p_sync.set_defaults(func=cmd_sync)
+
+    p_pipeline = sub.add_parser("pipeline", help="Sync + analyse + rapport")
+    p_pipeline.add_argument("--sync-limit", type=int, default=20)
+    p_pipeline.add_argument("--analyze-limit", type=int, default=5)
+    p_pipeline.add_argument("--open", action="store_true")
+    p_pipeline.set_defaults(func=cmd_pipeline)
 
     p_analyze = sub.add_parser("analyze", help="Analyser avec KataGo")
     p_analyze.add_argument("--limit", type=int, default=3, help="Nb parties")

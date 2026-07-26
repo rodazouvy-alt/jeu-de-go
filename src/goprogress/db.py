@@ -75,6 +75,29 @@ class Database:
         ).fetchone()
         return row["value"] if row else None
 
+    def is_month_synced(self, year: int, month: int) -> bool:
+        return self.get_sync_value(f"synced_month:{year}-{month}") == "done"
+
+    def mark_month_synced(self, year: int, month: int, count: int) -> None:
+        self.set_sync_value(f"synced_month:{year}-{month}", "done")
+        self.set_sync_value(
+            f"synced_month_count:{year}-{month}",
+            str(count),
+        )
+        self.set_sync_value("last_sync_at", datetime.now(timezone.utc).isoformat())
+
+    def synced_months_summary(self) -> list[sqlite3.Row]:
+        return self.conn.execute("""
+            SELECT key, value FROM sync_state
+            WHERE key LIKE 'synced_month:%' AND key NOT LIKE 'synced_month_count:%'
+            ORDER BY key DESC
+        """).fetchall()
+
+    def pending_analysis_count(self) -> int:
+        return self.conn.execute(
+            "SELECT COUNT(*) AS c FROM games WHERE analyzed_quick = 0"
+        ).fetchone()["c"]
+
     def set_sync_value(self, key: str, value: str) -> None:
         self.conn.execute(
             "INSERT INTO sync_state(key, value) VALUES(?, ?) "
@@ -123,9 +146,18 @@ class Database:
         self.conn.commit()
 
     def games_pending_analysis(self, mode: str = "quick", limit: int = 100) -> list[sqlite3.Row]:
-        col = "analyzed_deep" if mode == "deep" else "analyzed_quick"
+        if mode == "deep":
+            return self.conn.execute(
+                """
+                SELECT * FROM games
+                WHERE analyzed_deep = 0
+                ORDER BY analyzed_quick DESC, played_at DESC
+                LIMIT ?
+                """,
+                (limit,),
+            ).fetchall()
         return self.conn.execute(
-            f"SELECT * FROM games WHERE {col} = 0 ORDER BY played_at DESC LIMIT ?",
+            "SELECT * FROM games WHERE analyzed_quick = 0 ORDER BY played_at DESC LIMIT ?",
             (limit,),
         ).fetchall()
 

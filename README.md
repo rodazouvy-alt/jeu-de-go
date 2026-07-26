@@ -26,7 +26,8 @@ Cela va :
 |---------|--------|
 | `run_sync.bat` | Télécharger des parties KGS |
 | `run_sync.bat --year 2026 --month 7 --zip` | Archive ZIP du mois entier |
-| `run_sync.bat --all-months --zip` | Tout l'historique (long !) |
+| `run_collect.bat` | **Tout l'historique** (reprise auto, laisser tourner) |
+| `run_pipeline.bat` | Sync récent + analyse + rapport |
 | `run_analyze.bat` | Analyser les parties en attente |
 | `run_analyze.bat --limit 10` | Analyser 10 parties |
 | `start.bat` | Dashboard local http://127.0.0.1:8787 |

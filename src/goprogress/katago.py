@@ -16,11 +16,11 @@ class KataGoAnalysis:
     STARTUP_TIMEOUT = 120
     STARTUP_MARKERS = ("ready to begin", "analysis engine starting", "loaded neural net")
 
-    def __init__(self, cfg: dict[str, Any]):
+    def __init__(self, cfg: dict[str, Any], *, analysis_config: str | None = None):
         katago = cfg["katago"]
         self.executable = Path(katago["executable"])
         self.model = Path(katago["model"])
-        config_path = katago["config"]
+        config_path = analysis_config or katago["config"]
         self.config = (
             resolve_path(config_path)
             if not Path(config_path).is_absolute()
