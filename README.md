@@ -13,24 +13,24 @@ Double-cliquez sur **`setup.bat`**
 
 ### 2. Test complet (Phase 0)
 
-Double-cliquez sur **`run_test.bat`**
+Double-cliquez sur **`scripts\occasionnel\run_test.bat`**
 
 Cela va :
 1. Télécharger 5 parties récentes depuis KGS
 2. Analyser 3 parties avec KataGo (~1 min/partie)
 3. Générer un rapport HTML et l'ouvrir dans le navigateur
 
-### 3. Commandes utiles
+### 3. Commandes quotidiennes (racine du projet)
 
 | Fichier | Action |
 |---------|--------|
+| `start.bat` | Dashboard local http://127.0.0.1:8787 |
 | `run_sync.bat` | Télécharger des parties KGS |
 | `run_sync.bat --year 2026 --month 7 --zip` | Archive ZIP du mois entier |
-| `run_collect.bat` | **Tout l'historique** (reprise auto, laisser tourner) |
-| `run_pipeline.bat` | Sync récent + analyse + rapport |
-| `run_analyze.bat` | Analyser les parties en attente |
-| `run_analyze.bat --limit 10` | Analyser 10 parties |
-| `start.bat` | Dashboard local http://127.0.0.1:8787 |
+| `run_analysis_loop.bat` | **Boucle d'analyse principale** (partie 67+, laisser tourner) |
+| `run_finalize_reanalysis.bat` | Enrichissements finaux (patterns, rapport) |
+
+Voir **`scripts\LISEZMOI.txt`** pour les scripts occasionnels (collecte complète, analyse rapide, patterns, etc.).
 
 ### 4. Rapport HTML
 
@@ -50,8 +50,15 @@ jeu de go/
 │   └── reports/         ← rapports HTML
 ├── src/goprogress/      ← code Python
 ├── setup.bat
-├── run_test.bat
-└── start.bat
+├── start.bat
+├── run_sync.bat
+├── run_analysis_loop.bat
+├── run_finalize_reanalysis.bat
+└── scripts/
+    ├── LISEZMOI.txt       ← guide des scripts
+    ├── quotidien/         ← scripts du quotidien (copies)
+    ├── occasionnel/       ← analyse rapide, collecte, patterns…
+    └── archive/           ← scripts dangereux ou obsolètes
 ```
 
 ## Ce que vous apprenez en regardant le code

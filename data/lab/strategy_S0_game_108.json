@@ -1,0 +1,3336 @@
+{
+  "game_id": 108,
+  "strategy_id": "S0",
+  "strategy_name": "quick_only",
+  "gpu_seconds": 0.0,
+  "n_positions": 36,
+  "n_deep": 0,
+  "n_quick": 36,
+  "positions": [
+    {
+      "move_number": 6,
+      "played_move": "O17",
+      "best_move": "D5",
+      "point_loss": 0.22,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "D5",
+          "scoreLead": -0.688317787,
+          "winrate": 0.442314763,
+          "visits": 60,
+          "pv": [
+            "D5",
+            "C17",
+            "C16",
+            "D17",
+            "E16",
+            "F18",
+            "R17",
+            "R16",
+            "Q17",
+            "P16",
+            "P17",
+            "O16"
+          ]
+        },
+        {
+          "move": "C6",
+          "scoreLead": -0.632857719,
+          "winrate": 0.449799449,
+          "visits": 68,
+          "pv": [
+            "C6",
+            "C17",
+            "C16",
+            "D17",
+            "E16",
+            "F18",
+            "R17",
+            "R16",
+            "Q17",
+            "P16",
+            "O18"
+          ]
+        },
+        {
+          "move": "R17",
+          "scoreLead": -0.528089647,
+          "winrate": 0.44814596,
+          "visits": 37,
+          "pv": [
+            "R17",
+            "R16",
+            "Q17",
+            "P16",
+            "O18",
+            "C17",
+            "C16",
+            "D17",
+            "E16"
+          ]
+        },
+        {
+          "move": "O3",
+          "scoreLead": -0.619318505,
+          "winrate": 0.447132518,
+          "visits": 41,
+          "pv": [
+            "O3",
+            "C17",
+            "C16",
+            "D17",
+            "E16",
+            "F18",
+            "D5",
+            "Q6"
+          ]
+        },
+        {
+          "move": "F17",
+          "scoreLead": -0.649683217,
+          "winrate": 0.445209764,
+          "visits": 36,
+          "pv": [
+            "F17",
+            "C5",
+            "E4",
+            "C8",
+            "R3",
+            "R4",
+            "Q3"
+          ]
+        }
+      ],
+      "played_rank": null,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 14,
+      "played_move": "S15",
+      "best_move": "M17",
+      "point_loss": 0.26,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "M17",
+          "scoreLead": -0.957977852,
+          "winrate": 0.397938211,
+          "visits": 259,
+          "pv": [
+            "M17",
+            "P17",
+            "S15",
+            "S14",
+            "R15",
+            "R14",
+            "J17",
+            "C17",
+            "D17",
+            "C16",
+            "C14",
+            "C15",
+            "D15",
+            "B14"
+          ]
+        },
+        {
+          "move": "S15",
+          "scoreLead": -0.700604012,
+          "winrate": 0.424832779,
+          "visits": 132,
+          "pv": [
+            "S15",
+            "N17",
+            "R14",
+            "C5",
+            "F17",
+            "F4",
+            "E4",
+            "E5",
+            "F3"
+          ]
+        },
+        {
+          "move": "N17",
+          "scoreLead": 0.0562332993,
+          "winrate": 0.506263308,
+          "visits": 6,
+          "pv": [
+            "N17",
+            "P17",
+            "S15",
+            "S14",
+            "R15",
+            "R14"
+          ]
+        },
+        {
+          "move": "R15",
+          "scoreLead": 0.109444133,
+          "winrate": 0.509905344,
+          "visits": 2,
+          "pv": [
+            "R15",
+            "R16"
+          ]
+        },
+        {
+          "move": "S14",
+          "scoreLead": -0.268100947,
+          "winrate": 0.482930914,
+          "visits": 1,
+          "pv": [
+            "S14"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 18,
+      "played_move": "O3",
+      "best_move": "M17",
+      "point_loss": 1.04,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "M17",
+          "scoreLead": -0.985149545,
+          "winrate": 0.394738048,
+          "visits": 356,
+          "pv": [
+            "M17",
+            "P17",
+            "J16",
+            "C5",
+            "E4",
+            "C17",
+            "D17",
+            "C16",
+            "D15",
+            "C15",
+            "C13",
+            "D18"
+          ]
+        },
+        {
+          "move": "Q15",
+          "scoreLead": -0.41073952,
+          "winrate": 0.459070794,
+          "visits": 32,
+          "pv": [
+            "Q15",
+            "P15",
+            "P14",
+            "O15",
+            "P13",
+            "Q12",
+            "M17",
+            "P17",
+            "R16"
+          ]
+        },
+        {
+          "move": "R4",
+          "scoreLead": -0.268657758,
+          "winrate": 0.493813481,
+          "visits": 3,
+          "pv": [
+            "R4",
+            "R3",
+            "R5"
+          ]
+        },
+        {
+          "move": "N17",
+          "scoreLead": 0.152273698,
+          "winrate": 0.51358904,
+          "visits": 2,
+          "pv": [
+            "N17",
+            "P17"
+          ]
+        },
+        {
+          "move": "R16",
+          "scoreLead": -0.00802622869,
+          "winrate": 0.503909367,
+          "visits": 2,
+          "pv": [
+            "R16",
+            "N17"
+          ]
+        }
+      ],
+      "played_rank": null,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 20,
+      "played_move": "R3",
+      "best_move": "M17",
+      "point_loss": 0.18,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "M17",
+          "scoreLead": -1.25370298,
+          "winrate": 0.373611252,
+          "visits": 284,
+          "pv": [
+            "M17",
+            "P17",
+            "R3",
+            "R4",
+            "Q3",
+            "P4",
+            "S3",
+            "O4",
+            "N3",
+            "N4",
+            "M2",
+            "C5",
+            "C8",
+            "Q15",
+            "R16",
+            "H17"
+          ]
+        },
+        {
+          "move": "Q15",
+          "scoreLead": -0.780150525,
+          "winrate": 0.425379053,
+          "visits": 41,
+          "pv": [
+            "Q15",
+            "P15",
+            "P14",
+            "O15",
+            "P13",
+            "Q12",
+            "M17",
+            "P17",
+            "R16",
+            "N14",
+            "J16"
+          ]
+        },
+        {
+          "move": "R3",
+          "scoreLead": -1.0717655,
+          "winrate": 0.392568926,
+          "visits": 62,
+          "pv": [
+            "R3",
+            "R4",
+            "Q3",
+            "P4",
+            "Q15",
+            "P15",
+            "P14",
+            "O15",
+            "P13",
+            "Q12"
+          ]
+        },
+        {
+          "move": "N17",
+          "scoreLead": -0.162896588,
+          "winrate": 0.484897355,
+          "visits": 3,
+          "pv": [
+            "N17",
+            "P17",
+            "R3"
+          ]
+        },
+        {
+          "move": "R6",
+          "scoreLead": -0.616270162,
+          "winrate": 0.442286629,
+          "visits": 4,
+          "pv": [
+            "R6",
+            "Q15",
+            "M17"
+          ]
+        }
+      ],
+      "played_rank": 3,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 28,
+      "played_move": "M2",
+      "best_move": "M17",
+      "point_loss": 0.7,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "M17",
+          "scoreLead": -1.25520382,
+          "winrate": 0.36959961,
+          "visits": 357,
+          "pv": [
+            "M17",
+            "P17",
+            "M2",
+            "J17",
+            "F17",
+            "C5",
+            "C8",
+            "F5",
+            "K16",
+            "G16"
+          ]
+        },
+        {
+          "move": "M2",
+          "scoreLead": -0.558357874,
+          "winrate": 0.440360668,
+          "visits": 22,
+          "pv": [
+            "M2",
+            "Q15",
+            "R16",
+            "C5",
+            "E4",
+            "S4"
+          ]
+        },
+        {
+          "move": "Q15",
+          "scoreLead": -0.434416974,
+          "winrate": 0.457518111,
+          "visits": 16,
+          "pv": [
+            "Q15",
+            "P15",
+            "P14",
+            "O15",
+            "P13",
+            "Q12",
+            "M17",
+            "P17"
+          ]
+        },
+        {
+          "move": "M4",
+          "scoreLead": 0.132224049,
+          "winrate": 0.523724027,
+          "visits": 2,
+          "pv": [
+            "M4",
+            "P3"
+          ]
+        },
+        {
+          "move": "N17",
+          "scoreLead": 0.311893625,
+          "winrate": 0.519994784,
+          "visits": 2,
+          "pv": [
+            "N17",
+            "P17"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 30,
+      "played_move": "S4",
+      "best_move": "M17",
+      "point_loss": 0.39,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "M17",
+          "scoreLead": -1.62455248,
+          "winrate": 0.327052537,
+          "visits": 307,
+          "pv": [
+            "M17",
+            "P17",
+            "J16",
+            "S4",
+            "N2",
+            "C5",
+            "P10",
+            "Q15",
+            "R16",
+            "N10",
+            "Q9"
+          ]
+        },
+        {
+          "move": "Q15",
+          "scoreLead": -0.860514982,
+          "winrate": 0.409309794,
+          "visits": 44,
+          "pv": [
+            "Q15",
+            "P15",
+            "P14",
+            "O15",
+            "P13",
+            "Q12",
+            "M17",
+            "P17",
+            "R16",
+            "N14",
+            "J16"
+          ]
+        },
+        {
+          "move": "S4",
+          "scoreLead": -1.22988083,
+          "winrate": 0.364664285,
+          "visits": 35,
+          "pv": [
+            "S4",
+            "N17",
+            "G17",
+            "N2",
+            "O2",
+            "C5"
+          ]
+        },
+        {
+          "move": "N17",
+          "scoreLead": -0.309206843,
+          "winrate": 0.459216412,
+          "visits": 3,
+          "pv": [
+            "N17",
+            "P17",
+            "S4"
+          ]
+        },
+        {
+          "move": "P17",
+          "scoreLead": 1.9412116,
+          "winrate": 0.673248862,
+          "visits": 2,
+          "pv": [
+            "P17",
+            "N17"
+          ]
+        }
+      ],
+      "played_rank": 3,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 32,
+      "played_move": "C6",
+      "best_move": "M17",
+      "point_loss": 1.04,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "M17",
+          "scoreLead": -2.66655078,
+          "winrate": 0.235993927,
+          "visits": 341,
+          "pv": [
+            "M17",
+            "O16",
+            "J16",
+            "C17",
+            "D17",
+            "C16",
+            "D15",
+            "B14",
+            "S6",
+            "C5",
+            "C4",
+            "D5"
+          ]
+        },
+        {
+          "move": "Q15",
+          "scoreLead": -1.66255628,
+          "winrate": 0.323354511,
+          "visits": 25,
+          "pv": [
+            "Q15",
+            "P15",
+            "P14",
+            "O15",
+            "P13",
+            "Q12",
+            "M17",
+            "P17"
+          ]
+        },
+        {
+          "move": "S6",
+          "scoreLead": -1.72458488,
+          "winrate": 0.309656891,
+          "visits": 13,
+          "pv": [
+            "S6",
+            "Q15",
+            "R16",
+            "F17",
+            "M17"
+          ]
+        },
+        {
+          "move": "R16",
+          "scoreLead": -1.28724166,
+          "winrate": 0.346895763,
+          "visits": 5,
+          "pv": [
+            "R16",
+            "N17",
+            "Q15",
+            "P15"
+          ]
+        },
+        {
+          "move": "N17",
+          "scoreLead": -0.903854776,
+          "winrate": 0.388174296,
+          "visits": 2,
+          "pv": [
+            "N17",
+            "P17"
+          ]
+        }
+      ],
+      "played_rank": null,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 34,
+      "played_move": "M17",
+      "best_move": "R16",
+      "point_loss": 0.31,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "R16",
+          "scoreLead": -1.69190122,
+          "winrate": 0.312583019,
+          "visits": 316,
+          "pv": [
+            "R16",
+            "F17",
+            "C14",
+            "M9",
+            "S6",
+            "T5",
+            "Q9",
+            "P9",
+            "P8"
+          ]
+        },
+        {
+          "move": "M17",
+          "scoreLead": -1.38439727,
+          "winrate": 0.353240578,
+          "visits": 81,
+          "pv": [
+            "M17",
+            "K17",
+            "R16",
+            "F17",
+            "C14",
+            "K15",
+            "H17",
+            "G16",
+            "K18",
+            "J17",
+            "J18"
+          ]
+        },
+        {
+          "move": "S6",
+          "scoreLead": -0.537352023,
+          "winrate": 0.439286413,
+          "visits": 2,
+          "pv": [
+            "S6",
+            "T15"
+          ]
+        },
+        {
+          "move": "J16",
+          "scoreLead": -0.850779226,
+          "winrate": 0.408017096,
+          "visits": 2,
+          "pv": [
+            "J16",
+            "T15"
+          ]
+        },
+        {
+          "move": "N17",
+          "scoreLead": -0.560236692,
+          "winrate": 0.432579428,
+          "visits": 1,
+          "pv": [
+            "N17"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 36,
+      "played_move": "R16",
+      "best_move": "N16",
+      "point_loss": 1.83,
+      "severity": "mistake",
+      "top_moves": [
+        {
+          "move": "N16",
+          "scoreLead": -3.3407823,
+          "winrate": 0.186419104,
+          "visits": 963,
+          "pv": [
+            "N16",
+            "N18",
+            "R16",
+            "J15",
+            "K16",
+            "J16",
+            "K17",
+            "J17",
+            "L14",
+            "C17",
+            "D17",
+            "C16"
+          ]
+        },
+        {
+          "move": "R16",
+          "scoreLead": -1.51156252,
+          "winrate": 0.319845178,
+          "visits": 15,
+          "pv": [
+            "R16",
+            "N16",
+            "G17",
+            "M8",
+            "M10",
+            "K9",
+            "S6"
+          ]
+        },
+        {
+          "move": "F17",
+          "scoreLead": -0.978475476,
+          "winrate": 0.383949304,
+          "visits": 2,
+          "pv": [
+            "F17",
+            "T15"
+          ]
+        },
+        {
+          "move": "S6",
+          "scoreLead": -0.976682782,
+          "winrate": 0.390134022,
+          "visits": 1,
+          "pv": [
+            "S6"
+          ]
+        },
+        {
+          "move": "N18",
+          "scoreLead": -0.212068021,
+          "winrate": 0.452190518,
+          "visits": 1,
+          "pv": [
+            "N18"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 38,
+      "played_move": "F17",
+      "best_move": "S6",
+      "point_loss": 0.58,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "S6",
+          "scoreLead": -3.85576914,
+          "winrate": 0.145644951,
+          "visits": 184,
+          "pv": [
+            "S6",
+            "F17",
+            "N16",
+            "N18",
+            "D14",
+            "T5",
+            "O8",
+            "M8"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": -3.84014371,
+          "winrate": 0.147839745,
+          "visits": 168,
+          "pv": [
+            "N16",
+            "N18",
+            "S6",
+            "F17",
+            "D14",
+            "T5",
+            "O8",
+            "M8"
+          ]
+        },
+        {
+          "move": "F17",
+          "scoreLead": -3.27761284,
+          "winrate": 0.17583732,
+          "visits": 22,
+          "pv": [
+            "F17",
+            "L17",
+            "S6",
+            "T5",
+            "O8",
+            "M8",
+            "Q9",
+            "P9"
+          ]
+        },
+        {
+          "move": "L9",
+          "scoreLead": -3.25254111,
+          "winrate": 0.178719014,
+          "visits": 10,
+          "pv": [
+            "L9",
+            "L17",
+            "S6",
+            "C14",
+            "C15"
+          ]
+        },
+        {
+          "move": "L8",
+          "scoreLead": -3.10538823,
+          "winrate": 0.192550009,
+          "visits": 3,
+          "pv": [
+            "L8",
+            "L17"
+          ]
+        }
+      ],
+      "played_rank": 3,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 42,
+      "played_move": "C14",
+      "best_move": "N16",
+      "point_loss": 1.84,
+      "severity": "mistake",
+      "top_moves": [
+        {
+          "move": "N16",
+          "scoreLead": -4.68518953,
+          "winrate": 0.134530662,
+          "visits": 784,
+          "pv": [
+            "N16",
+            "N18",
+            "C16",
+            "M9",
+            "L7",
+            "D4",
+            "E4",
+            "C3",
+            "C4",
+            "D5",
+            "C5",
+            "E3",
+            "D2",
+            "F4",
+            "E5"
+          ]
+        },
+        {
+          "move": "C16",
+          "scoreLead": -3.87618745,
+          "winrate": 0.166850262,
+          "visits": 121,
+          "pv": [
+            "C16",
+            "L17",
+            "S6",
+            "T5",
+            "M7",
+            "O7",
+            "L9",
+            "C12",
+            "L10",
+            "N9"
+          ]
+        },
+        {
+          "move": "S6",
+          "scoreLead": -3.67616613,
+          "winrate": 0.168252158,
+          "visits": 76,
+          "pv": [
+            "S6",
+            "L17",
+            "C16",
+            "T5",
+            "M7",
+            "O7",
+            "L9",
+            "C12",
+            "L10",
+            "N9"
+          ]
+        },
+        {
+          "move": "C14",
+          "scoreLead": -2.84751823,
+          "winrate": 0.220265578,
+          "visits": 4,
+          "pv": [
+            "C14",
+            "L17",
+            "S6"
+          ]
+        },
+        {
+          "move": "B16",
+          "scoreLead": -2.79624554,
+          "winrate": 0.226707456,
+          "visits": 3,
+          "pv": [
+            "B16",
+            "L17"
+          ]
+        }
+      ],
+      "played_rank": 4,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 44,
+      "played_move": "B17",
+      "best_move": "C16",
+      "point_loss": 0.49,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "C16",
+          "scoreLead": -4.45951326,
+          "winrate": 0.12203565,
+          "visits": 127,
+          "pv": [
+            "C16",
+            "C13",
+            "N16",
+            "N18",
+            "S6",
+            "T5",
+            "O8",
+            "R6",
+            "R7",
+            "Q8"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": -4.42217572,
+          "winrate": 0.122545167,
+          "visits": 155,
+          "pv": [
+            "N16",
+            "N18",
+            "C16",
+            "C13",
+            "S6",
+            "T5",
+            "O8",
+            "R6",
+            "R7",
+            "Q8"
+          ]
+        },
+        {
+          "move": "S6",
+          "scoreLead": -3.97433047,
+          "winrate": 0.136302162,
+          "visits": 66,
+          "pv": [
+            "S6",
+            "L17",
+            "B17",
+            "T5",
+            "M7",
+            "O7",
+            "L9"
+          ]
+        },
+        {
+          "move": "B17",
+          "scoreLead": -3.9723533,
+          "winrate": 0.140959944,
+          "visits": 42,
+          "pv": [
+            "B17",
+            "C13",
+            "S6",
+            "T5",
+            "N16",
+            "N18",
+            "O8",
+            "R6"
+          ]
+        },
+        {
+          "move": "L9",
+          "scoreLead": -2.84673453,
+          "winrate": 0.20946197,
+          "visits": 4,
+          "pv": [
+            "L9",
+            "C17"
+          ]
+        }
+      ],
+      "played_rank": 4,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 58,
+      "played_move": "F11",
+      "best_move": "S6",
+      "point_loss": 0.92,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "S6",
+          "scoreLead": -0.24799079,
+          "winrate": 0.452409234,
+          "visits": 242,
+          "pv": [
+            "S6",
+            "N2",
+            "R5",
+            "G16",
+            "N16",
+            "N18",
+            "G17"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": -0.171831578,
+          "winrate": 0.463261248,
+          "visits": 124,
+          "pv": [
+            "N16",
+            "N18",
+            "S6",
+            "G16",
+            "G17",
+            "J16",
+            "R6",
+            "R5",
+            "T5",
+            "H17",
+            "M15"
+          ]
+        },
+        {
+          "move": "F10",
+          "scoreLead": 0.285968949,
+          "winrate": 0.495699989,
+          "visits": 20,
+          "pv": [
+            "F10",
+            "D6",
+            "N16",
+            "N18",
+            "D5"
+          ]
+        },
+        {
+          "move": "F11",
+          "scoreLead": 0.670158963,
+          "winrate": 0.536798918,
+          "visits": 6,
+          "pv": [
+            "F11",
+            "E11",
+            "N16"
+          ]
+        },
+        {
+          "move": "G15",
+          "scoreLead": 0.694371671,
+          "winrate": 0.549548151,
+          "visits": 5,
+          "pv": [
+            "G15",
+            "L17",
+            "S6",
+            "T5"
+          ]
+        }
+      ],
+      "played_rank": 4,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 62,
+      "played_move": "G10",
+      "best_move": "F12",
+      "point_loss": 1.34,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "F12",
+          "scoreLead": -0.418639711,
+          "winrate": 0.43983754,
+          "visits": 205,
+          "pv": [
+            "F12",
+            "F13",
+            "H12",
+            "H13",
+            "N16",
+            "N18",
+            "H10",
+            "J12",
+            "F9",
+            "L7",
+            "S6",
+            "T5",
+            "Q9"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": -0.355801628,
+          "winrate": 0.446982125,
+          "visits": 169,
+          "pv": [
+            "N16",
+            "N18",
+            "F12",
+            "F13",
+            "H12",
+            "H13",
+            "H10",
+            "J12",
+            "F9",
+            "L7",
+            "S6",
+            "T5",
+            "Q9"
+          ]
+        },
+        {
+          "move": "F9",
+          "scoreLead": 0.95753243,
+          "winrate": 0.567499864,
+          "visits": 10,
+          "pv": [
+            "F9",
+            "G10",
+            "N16",
+            "N18",
+            "H8"
+          ]
+        },
+        {
+          "move": "G11",
+          "scoreLead": 1.03433199,
+          "winrate": 0.585410852,
+          "visits": 5,
+          "pv": [
+            "G11",
+            "F9",
+            "N16"
+          ]
+        },
+        {
+          "move": "H10",
+          "scoreLead": 0.948006828,
+          "winrate": 0.564987221,
+          "visits": 5,
+          "pv": [
+            "H10",
+            "F9",
+            "N16"
+          ]
+        }
+      ],
+      "played_rank": null,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 66,
+      "played_move": "H12",
+      "best_move": "G9",
+      "point_loss": 3.62,
+      "severity": "mistake",
+      "top_moves": [
+        {
+          "move": "G9",
+          "scoreLead": 0.513472298,
+          "winrate": 0.523623065,
+          "visits": 501,
+          "pv": [
+            "G9",
+            "F8",
+            "N16",
+            "N18",
+            "H12",
+            "F16",
+            "G8",
+            "G17",
+            "E17",
+            "F7",
+            "G7",
+            "F6",
+            "H14"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": 0.491306583,
+          "winrate": 0.524810721,
+          "visits": 351,
+          "pv": [
+            "N16",
+            "N18",
+            "G9",
+            "F8",
+            "H12",
+            "F16",
+            "G8",
+            "G17",
+            "E17",
+            "F7",
+            "G7",
+            "F6",
+            "H14"
+          ]
+        },
+        {
+          "move": "E13",
+          "scoreLead": 0.786764891,
+          "winrate": 0.557139971,
+          "visits": 131,
+          "pv": [
+            "E13",
+            "D12",
+            "N16",
+            "N18",
+            "G9",
+            "F8",
+            "G8",
+            "H12",
+            "G11",
+            "F7",
+            "G7",
+            "F6",
+            "D7",
+            "G6"
+          ]
+        },
+        {
+          "move": "D12",
+          "scoreLead": 2.31089942,
+          "winrate": 0.668754304,
+          "visits": 8,
+          "pv": [
+            "D12",
+            "E13",
+            "G9",
+            "F8",
+            "G8",
+            "F7"
+          ]
+        },
+        {
+          "move": "H11",
+          "scoreLead": 2.48250642,
+          "winrate": 0.682492198,
+          "visits": 2,
+          "pv": [
+            "H11",
+            "J12"
+          ]
+        }
+      ],
+      "played_rank": null,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 68,
+      "played_move": "D12",
+      "best_move": "E13",
+      "point_loss": 2.34,
+      "severity": "mistake",
+      "top_moves": [
+        {
+          "move": "E13",
+          "scoreLead": 2.51458372,
+          "winrate": 0.65790598,
+          "visits": 471,
+          "pv": [
+            "E13",
+            "D12",
+            "N16",
+            "N18",
+            "M15",
+            "L16",
+            "H14",
+            "H10",
+            "H11",
+            "G11",
+            "G12",
+            "G15",
+            "H15",
+            "G16",
+            "K16",
+            "L15"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": 2.66211187,
+          "winrate": 0.669038962,
+          "visits": 502,
+          "pv": [
+            "N16",
+            "N18",
+            "E13",
+            "D12",
+            "M15",
+            "L16",
+            "H14",
+            "H10",
+            "H11",
+            "G11",
+            "G12",
+            "G15",
+            "H15",
+            "G16",
+            "K16",
+            "L15"
+          ]
+        },
+        {
+          "move": "H14",
+          "scoreLead": 4.54897403,
+          "winrate": 0.780556016,
+          "visits": 9,
+          "pv": [
+            "H14",
+            "H10",
+            "N16",
+            "N18",
+            "G12",
+            "F16",
+            "G16",
+            "G15",
+            "H16"
+          ]
+        },
+        {
+          "move": "H11",
+          "scoreLead": 4.31902733,
+          "winrate": 0.758666359,
+          "visits": 8,
+          "pv": [
+            "H11",
+            "H10",
+            "N16",
+            "N18",
+            "H14"
+          ]
+        },
+        {
+          "move": "H10",
+          "scoreLead": 5.64068597,
+          "winrate": 0.819096542,
+          "visits": 6,
+          "pv": [
+            "H10",
+            "H9",
+            "N16",
+            "N18",
+            "J10",
+            "J9",
+            "H14"
+          ]
+        }
+      ],
+      "played_rank": null,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 70,
+      "played_move": "D11",
+      "best_move": "N16",
+      "point_loss": 0.18,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "N16",
+          "scoreLead": 4.82070437,
+          "winrate": 0.823254954,
+          "visits": 281,
+          "pv": [
+            "N16",
+            "N18",
+            "D11",
+            "H10",
+            "D13",
+            "M15",
+            "L10",
+            "L9",
+            "K11",
+            "M10",
+            "G12",
+            "H14",
+            "J10",
+            "L11",
+            "H9",
+            "J9"
+          ]
+        },
+        {
+          "move": "D11",
+          "scoreLead": 5.00229266,
+          "winrate": 0.827885114,
+          "visits": 117,
+          "pv": [
+            "D11",
+            "H10",
+            "N16",
+            "N18",
+            "D13",
+            "M15",
+            "L10",
+            "L9",
+            "K11",
+            "M10",
+            "G12",
+            "H14",
+            "J10",
+            "L11",
+            "H9",
+            "J9"
+          ]
+        },
+        {
+          "move": "H10",
+          "scoreLead": 8.6199416,
+          "winrate": 0.917827333,
+          "visits": 2,
+          "pv": [
+            "H10",
+            "H9"
+          ]
+        },
+        {
+          "move": "H11",
+          "scoreLead": 9.32825168,
+          "winrate": 0.923000505,
+          "visits": 2,
+          "pv": [
+            "H11",
+            "J10"
+          ]
+        },
+        {
+          "move": "H14",
+          "scoreLead": 9.64143658,
+          "winrate": 0.928931307,
+          "visits": 1,
+          "pv": [
+            "H14"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 72,
+      "played_move": "H14",
+      "best_move": "N16",
+      "point_loss": 1.16,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "N16",
+          "scoreLead": 1.49484548,
+          "winrate": 0.604490731,
+          "visits": 359,
+          "pv": [
+            "N16",
+            "N18",
+            "M15",
+            "L16",
+            "H14",
+            "F16",
+            "K16",
+            "G17",
+            "E16",
+            "J13",
+            "L17",
+            "H13",
+            "L15",
+            "F18"
+          ]
+        },
+        {
+          "move": "H14",
+          "scoreLead": 2.65087731,
+          "winrate": 0.689469302,
+          "visits": 25,
+          "pv": [
+            "H14",
+            "H15",
+            "N16",
+            "N18",
+            "J15",
+            "H16",
+            "F16",
+            "J14"
+          ]
+        },
+        {
+          "move": "H10",
+          "scoreLead": 4.52255611,
+          "winrate": 0.779013674,
+          "visits": 5,
+          "pv": [
+            "H10",
+            "H9",
+            "N16",
+            "N18",
+            "J10",
+            "J9",
+            "H14"
+          ]
+        },
+        {
+          "move": "H11",
+          "scoreLead": 3.45212259,
+          "winrate": 0.715082229,
+          "visits": 8,
+          "pv": [
+            "H11",
+            "J10",
+            "H14",
+            "H15"
+          ]
+        },
+        {
+          "move": "H9",
+          "scoreLead": 5.86821515,
+          "winrate": 0.819739936,
+          "visits": 2,
+          "pv": [
+            "H9",
+            "H10"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 74,
+      "played_move": "H10",
+      "best_move": "N16",
+      "point_loss": 2.19,
+      "severity": "mistake",
+      "top_moves": [
+        {
+          "move": "N16",
+          "scoreLead": 1.92244736,
+          "winrate": 0.595853439,
+          "visits": 869,
+          "pv": [
+            "N16",
+            "N18",
+            "M15",
+            "L16",
+            "K16",
+            "L15",
+            "L14",
+            "K15",
+            "J15",
+            "K14",
+            "K13",
+            "L17",
+            "J14",
+            "H10",
+            "H11",
+            "F16"
+          ]
+        },
+        {
+          "move": "F16",
+          "scoreLead": 2.50087405,
+          "winrate": 0.628314778,
+          "visits": 89,
+          "pv": [
+            "F16",
+            "H10",
+            "N16",
+            "N18",
+            "H11",
+            "G11",
+            "G12",
+            "G15",
+            "J15",
+            "J16",
+            "K16"
+          ]
+        },
+        {
+          "move": "H10",
+          "scoreLead": 4.10996604,
+          "winrate": 0.765073729,
+          "visits": 22,
+          "pv": [
+            "H10",
+            "H9",
+            "N16",
+            "N18",
+            "M15",
+            "F16",
+            "G17"
+          ]
+        },
+        {
+          "move": "H11",
+          "scoreLead": 4.00657049,
+          "winrate": 0.709448863,
+          "visits": 11,
+          "pv": [
+            "H11",
+            "J10",
+            "G15",
+            "F16",
+            "H16"
+          ]
+        },
+        {
+          "move": "G15",
+          "scoreLead": 7.24772546,
+          "winrate": 0.821033322,
+          "visits": 6,
+          "pv": [
+            "G15",
+            "F16",
+            "H16",
+            "E16"
+          ]
+        }
+      ],
+      "played_rank": 3,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 76,
+      "played_move": "G15",
+      "best_move": "F16",
+      "point_loss": 7.78,
+      "severity": "blunder",
+      "top_moves": [
+        {
+          "move": "F16",
+          "scoreLead": 3.73131841,
+          "winrate": 0.723967142,
+          "visits": 451,
+          "pv": [
+            "F16",
+            "G15",
+            "N16",
+            "C8",
+            "B8",
+            "N18",
+            "J15",
+            "J16",
+            "K16",
+            "K15",
+            "L16",
+            "K14",
+            "L13",
+            "K13",
+            "K12",
+            "M15"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": 3.99823096,
+          "winrate": 0.742296969,
+          "visits": 482,
+          "pv": [
+            "N16",
+            "C8",
+            "B8",
+            "N18",
+            "F16",
+            "G15",
+            "J15",
+            "J16",
+            "K16",
+            "K15",
+            "L16",
+            "K14",
+            "L13",
+            "K13",
+            "K12",
+            "M15"
+          ]
+        },
+        {
+          "move": "J10",
+          "scoreLead": 4.90814573,
+          "winrate": 0.79204758,
+          "visits": 58,
+          "pv": [
+            "J10",
+            "J9",
+            "N16",
+            "C8",
+            "D8",
+            "D7",
+            "E8",
+            "C7",
+            "F7"
+          ]
+        },
+        {
+          "move": "G15",
+          "scoreLead": 11.5110229,
+          "winrate": 0.924042239,
+          "visits": 7,
+          "pv": [
+            "G15",
+            "F16",
+            "H16",
+            "E16",
+            "E17"
+          ]
+        },
+        {
+          "move": "J15",
+          "scoreLead": 8.10321682,
+          "winrate": 0.893676654,
+          "visits": 3,
+          "pv": [
+            "J15",
+            "F16",
+            "N16"
+          ]
+        }
+      ],
+      "played_rank": 4,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 78,
+      "played_move": "E17",
+      "best_move": "F16",
+      "point_loss": 15.65,
+      "severity": "mega_blunder",
+      "top_moves": [
+        {
+          "move": "F16",
+          "scoreLead": -2.8981354,
+          "winrate": 0.329114503,
+          "visits": 1985,
+          "pv": [
+            "F16",
+            "E17",
+            "E18",
+            "F15",
+            "G17",
+            "H13",
+            "J13",
+            "G12",
+            "N16",
+            "C8",
+            "B8",
+            "N18",
+            "L16",
+            "H11",
+            "G13",
+            "G11"
+          ]
+        },
+        {
+          "move": "E17",
+          "scoreLead": 12.7513757,
+          "winrate": 0.967306895,
+          "visits": 5,
+          "pv": [
+            "E17",
+            "F16",
+            "N16"
+          ]
+        },
+        {
+          "move": "F15",
+          "scoreLead": 13.6585543,
+          "winrate": 0.926367764,
+          "visits": 5,
+          "pv": [
+            "F15",
+            "E15",
+            "F16"
+          ]
+        },
+        {
+          "move": "H16",
+          "scoreLead": 18.8614731,
+          "winrate": 0.977051804,
+          "visits": 1,
+          "pv": [
+            "H16"
+          ]
+        },
+        {
+          "move": "J10",
+          "scoreLead": 13.4864082,
+          "winrate": 0.958960107,
+          "visits": 1,
+          "pv": [
+            "J10"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 80,
+      "played_move": "H16",
+      "best_move": "J10",
+      "point_loss": 4.06,
+      "severity": "blunder",
+      "top_moves": [
+        {
+          "move": "J10",
+          "scoreLead": 11.7676942,
+          "winrate": 0.971058059,
+          "visits": 361,
+          "pv": [
+            "J10",
+            "J9",
+            "N16",
+            "N18",
+            "K11",
+            "J11",
+            "H11",
+            "L10",
+            "M15",
+            "L16",
+            "K16",
+            "L15",
+            "L14",
+            "K15",
+            "J15",
+            "K14"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": 12.1872958,
+          "winrate": 0.972545212,
+          "visits": 444,
+          "pv": [
+            "N16",
+            "N18",
+            "J10",
+            "J9",
+            "K11",
+            "J11",
+            "H11",
+            "L10",
+            "M15",
+            "L16",
+            "K16",
+            "L15",
+            "L14",
+            "K15",
+            "J15",
+            "K14"
+          ]
+        },
+        {
+          "move": "H16",
+          "scoreLead": 15.8302597,
+          "winrate": 0.985815571,
+          "visits": 22,
+          "pv": [
+            "H16",
+            "G17",
+            "N16",
+            "N18",
+            "M15",
+            "L16",
+            "K16",
+            "L15"
+          ]
+        },
+        {
+          "move": "H18",
+          "scoreLead": 14.169487,
+          "winrate": 0.985156524,
+          "visits": 27,
+          "pv": [
+            "H18",
+            "J10",
+            "N16",
+            "N18",
+            "M15",
+            "L16",
+            "K16",
+            "L15",
+            "G12"
+          ]
+        },
+        {
+          "move": "F15",
+          "scoreLead": 14.5887917,
+          "winrate": 0.983043073,
+          "visits": 22,
+          "pv": [
+            "F15",
+            "E15",
+            "N16",
+            "N18",
+            "M15",
+            "L16",
+            "K16",
+            "L15"
+          ]
+        }
+      ],
+      "played_rank": 3,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 82,
+      "played_move": "H17",
+      "best_move": "J10",
+      "point_loss": 6.3,
+      "severity": "blunder",
+      "top_moves": [
+        {
+          "move": "J10",
+          "scoreLead": 15.458287,
+          "winrate": 0.985169809,
+          "visits": 282,
+          "pv": [
+            "J10",
+            "J9",
+            "N16",
+            "N18",
+            "K11",
+            "L10",
+            "K16",
+            "M15",
+            "F18",
+            "J18"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": 16.18874,
+          "winrate": 0.986688245,
+          "visits": 283,
+          "pv": [
+            "N16",
+            "N18",
+            "J10",
+            "J9",
+            "K11",
+            "L10",
+            "K16",
+            "M15",
+            "F18",
+            "J18"
+          ]
+        },
+        {
+          "move": "G18",
+          "scoreLead": 18.1245632,
+          "winrate": 0.992416844,
+          "visits": 54,
+          "pv": [
+            "G18",
+            "H18",
+            "N16",
+            "N18",
+            "F18",
+            "H17",
+            "J10",
+            "J9"
+          ]
+        },
+        {
+          "move": "F15",
+          "scoreLead": 17.6355563,
+          "winrate": 0.990971079,
+          "visits": 39,
+          "pv": [
+            "F15",
+            "E15",
+            "N16",
+            "N18",
+            "M15",
+            "L16",
+            "L15",
+            "K16",
+            "J10"
+          ]
+        },
+        {
+          "move": "J18",
+          "scoreLead": 18.8127905,
+          "winrate": 0.989281407,
+          "visits": 33,
+          "pv": [
+            "J18",
+            "J10",
+            "N16",
+            "N18",
+            "M15",
+            "L16",
+            "K16"
+          ]
+        }
+      ],
+      "played_rank": null,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 84,
+      "played_move": "K17",
+      "best_move": "F18",
+      "point_loss": 5.26,
+      "severity": "blunder",
+      "top_moves": [
+        {
+          "move": "F18",
+          "scoreLead": 17.9874776,
+          "winrate": 0.988067879,
+          "visits": 569,
+          "pv": [
+            "F18",
+            "J10",
+            "N16",
+            "N18",
+            "G18",
+            "G12",
+            "S6",
+            "T5",
+            "Q9",
+            "M15"
+          ]
+        },
+        {
+          "move": "N16",
+          "scoreLead": 21.2623862,
+          "winrate": 0.99462115,
+          "visits": 88,
+          "pv": [
+            "N16",
+            "F18",
+            "E18",
+            "N18",
+            "F19",
+            "G18",
+            "J10",
+            "J9"
+          ]
+        },
+        {
+          "move": "J10",
+          "scoreLead": 20.0733214,
+          "winrate": 0.99405173,
+          "visits": 80,
+          "pv": [
+            "J10",
+            "F18",
+            "E18",
+            "J9",
+            "N16",
+            "N18",
+            "K17",
+            "C18"
+          ]
+        },
+        {
+          "move": "E18",
+          "scoreLead": 20.8439042,
+          "winrate": 0.993707824,
+          "visits": 50,
+          "pv": [
+            "E18",
+            "F18",
+            "N16",
+            "N18",
+            "F19",
+            "G18",
+            "J10",
+            "J9"
+          ]
+        },
+        {
+          "move": "K17",
+          "scoreLead": 23.2433399,
+          "winrate": 0.995346907,
+          "visits": 19,
+          "pv": [
+            "K17",
+            "F18",
+            "E18",
+            "C18",
+            "D18",
+            "J10"
+          ]
+        }
+      ],
+      "played_rank": 5,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 92,
+      "played_move": "D19",
+      "best_move": "C18",
+      "point_loss": 0.43,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "C18",
+          "scoreLead": 10.9632359,
+          "winrate": 0.961243516,
+          "visits": 321,
+          "pv": [
+            "C18",
+            "J13",
+            "H13",
+            "L16",
+            "J10",
+            "J9",
+            "L15",
+            "K16",
+            "L17",
+            "K15",
+            "K14",
+            "N15",
+            "O16"
+          ]
+        },
+        {
+          "move": "D19",
+          "scoreLead": 11.389293,
+          "winrate": 0.973925431,
+          "visits": 64,
+          "pv": [
+            "D19",
+            "J13",
+            "H13",
+            "F19",
+            "C18",
+            "L16",
+            "L15",
+            "K16",
+            "L17"
+          ]
+        },
+        {
+          "move": "J10",
+          "scoreLead": 14.3135824,
+          "winrate": 0.981452538,
+          "visits": 6,
+          "pv": [
+            "J10",
+            "J9",
+            "C18"
+          ]
+        },
+        {
+          "move": "F19",
+          "scoreLead": 14.4224791,
+          "winrate": 0.985867711,
+          "visits": 3,
+          "pv": [
+            "F19",
+            "G19",
+            "C18"
+          ]
+        },
+        {
+          "move": "F15",
+          "scoreLead": 18.3564697,
+          "winrate": 0.981333824,
+          "visits": 2,
+          "pv": [
+            "F15",
+            "D17"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 98,
+      "played_move": "E4",
+      "best_move": "F5",
+      "point_loss": 0.77,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "F5",
+          "scoreLead": 11.0984334,
+          "winrate": 0.974407511,
+          "visits": 106,
+          "pv": [
+            "F5",
+            "J13",
+            "H13",
+            "L16",
+            "L15",
+            "K16",
+            "L17",
+            "N15",
+            "O16"
+          ]
+        },
+        {
+          "move": "L16",
+          "scoreLead": 10.8755686,
+          "winrate": 0.978164105,
+          "visits": 97,
+          "pv": [
+            "L16",
+            "E4",
+            "D4",
+            "C8",
+            "D8",
+            "D7",
+            "C7",
+            "D9",
+            "E8"
+          ]
+        },
+        {
+          "move": "S6",
+          "scoreLead": 11.2411628,
+          "winrate": 0.978124169,
+          "visits": 68,
+          "pv": [
+            "S6",
+            "E4",
+            "D4",
+            "L16",
+            "L15",
+            "K16",
+            "L17"
+          ]
+        },
+        {
+          "move": "K18",
+          "scoreLead": 13.8670383,
+          "winrate": 0.985090824,
+          "visits": 27,
+          "pv": [
+            "K18",
+            "J10",
+            "L16",
+            "E4",
+            "D4"
+          ]
+        },
+        {
+          "move": "E4",
+          "scoreLead": 11.8700944,
+          "winrate": 0.98086597,
+          "visits": 28,
+          "pv": [
+            "E4",
+            "J13",
+            "H13",
+            "L16",
+            "L15",
+            "K16",
+            "K15"
+          ]
+        }
+      ],
+      "played_rank": 5,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 102,
+      "played_move": "O2",
+      "best_move": "S6",
+      "point_loss": 0.16,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "S6",
+          "scoreLead": 10.6152504,
+          "winrate": 0.97368298,
+          "visits": 160,
+          "pv": [
+            "S6",
+            "T5",
+            "O2",
+            "N10",
+            "R10",
+            "R11",
+            "Q9",
+            "P10",
+            "R7",
+            "R5"
+          ]
+        },
+        {
+          "move": "O2",
+          "scoreLead": 10.7760771,
+          "winrate": 0.97329598,
+          "visits": 110,
+          "pv": [
+            "O2",
+            "C8",
+            "D8",
+            "D7",
+            "E8",
+            "C7",
+            "E7",
+            "D6",
+            "E6",
+            "C4",
+            "C3",
+            "B6",
+            "S6"
+          ]
+        },
+        {
+          "move": "K18",
+          "scoreLead": 13.4234499,
+          "winrate": 0.987688122,
+          "visits": 40,
+          "pv": [
+            "K18",
+            "J10",
+            "S6",
+            "T5",
+            "R10",
+            "R11"
+          ]
+        },
+        {
+          "move": "R10",
+          "scoreLead": 11.5741197,
+          "winrate": 0.983281444,
+          "visits": 23,
+          "pv": [
+            "R10",
+            "S7",
+            "R6",
+            "S6",
+            "Q11"
+          ]
+        },
+        {
+          "move": "J10",
+          "scoreLead": 11.6515556,
+          "winrate": 0.981106745,
+          "visits": 14,
+          "pv": [
+            "J10",
+            "J9",
+            "S6",
+            "T5",
+            "O2"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 104,
+      "played_move": "K18",
+      "best_move": "S6",
+      "point_loss": 2.17,
+      "severity": "mistake",
+      "top_moves": [
+        {
+          "move": "S6",
+          "scoreLead": 7.53263175,
+          "winrate": 0.942049219,
+          "visits": 389,
+          "pv": [
+            "S6",
+            "C8",
+            "B8",
+            "T5",
+            "Q9",
+            "R10",
+            "O9",
+            "N10",
+            "R9",
+            "S10",
+            "N9",
+            "M10"
+          ]
+        },
+        {
+          "move": "G3",
+          "scoreLead": 7.89763882,
+          "winrate": 0.948589371,
+          "visits": 175,
+          "pv": [
+            "G3",
+            "D7",
+            "B8",
+            "H3",
+            "S6",
+            "T5",
+            "O10"
+          ]
+        },
+        {
+          "move": "K18",
+          "scoreLead": 9.70281844,
+          "winrate": 0.972473831,
+          "visits": 23,
+          "pv": [
+            "K18",
+            "J10",
+            "S6",
+            "T5",
+            "R10",
+            "R11"
+          ]
+        },
+        {
+          "move": "P10",
+          "scoreLead": 7.61508766,
+          "winrate": 0.954288373,
+          "visits": 52,
+          "pv": [
+            "P10",
+            "C8",
+            "B8",
+            "P9",
+            "S6",
+            "T5",
+            "Q11"
+          ]
+        },
+        {
+          "move": "N11",
+          "scoreLead": 7.68373009,
+          "winrate": 0.958363059,
+          "visits": 54,
+          "pv": [
+            "N11",
+            "C8",
+            "B8",
+            "N9",
+            "G3",
+            "H3",
+            "G2"
+          ]
+        }
+      ],
+      "played_rank": 3,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 128,
+      "played_move": "N9",
+      "best_move": "Q12",
+      "point_loss": 6.86,
+      "severity": "blunder",
+      "top_moves": [
+        {
+          "move": "Q12",
+          "scoreLead": -7.85618523,
+          "winrate": 0.0289926847,
+          "visits": 959,
+          "pv": [
+            "Q12",
+            "R11",
+            "O11",
+            "N9",
+            "R12",
+            "S11",
+            "S12",
+            "T14",
+            "S10",
+            "T15",
+            "T16",
+            "T18",
+            "Q19",
+            "C8",
+            "S19",
+            "K19"
+          ]
+        },
+        {
+          "move": "N10",
+          "scoreLead": -4.76109144,
+          "winrate": 0.127915893,
+          "visits": 21,
+          "pv": [
+            "N10",
+            "N9",
+            "Q12",
+            "R11",
+            "R12",
+            "S11",
+            "S12",
+            "O10",
+            "O11",
+            "N11",
+            "O12",
+            "N12",
+            "O13",
+            "T15",
+            "T16",
+            "T14"
+          ]
+        },
+        {
+          "move": "N9",
+          "scoreLead": -0.996198402,
+          "winrate": 0.38367867,
+          "visits": 13,
+          "pv": [
+            "N9",
+            "O10",
+            "O11",
+            "N10",
+            "Q12",
+            "R11",
+            "R12",
+            "S11",
+            "S12",
+            "N11",
+            "O12",
+            "N12",
+            "O13",
+            "T15",
+            "T16",
+            "T14"
+          ]
+        },
+        {
+          "move": "O11",
+          "scoreLead": -4.98527559,
+          "winrate": 0.136708234,
+          "visits": 6,
+          "pv": [
+            "O11",
+            "N9",
+            "Q12",
+            "T14"
+          ]
+        },
+        {
+          "move": "O7",
+          "scoreLead": 7.09200954,
+          "winrate": 0.799892731,
+          "visits": 1,
+          "pv": [
+            "O7"
+          ]
+        }
+      ],
+      "played_rank": 3,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 144,
+      "played_move": "M18",
+      "best_move": "F6",
+      "point_loss": 2.71,
+      "severity": "mistake",
+      "top_moves": [
+        {
+          "move": "F6",
+          "scoreLead": -5.01057238,
+          "winrate": 0.0757856714,
+          "visits": 269,
+          "pv": [
+            "F6",
+            "J10",
+            "G3",
+            "H3",
+            "G2",
+            "H2",
+            "G6",
+            "F2",
+            "H7",
+            "H6"
+          ]
+        },
+        {
+          "move": "G3",
+          "scoreLead": -4.8744841,
+          "winrate": 0.11426608,
+          "visits": 378,
+          "pv": [
+            "G3",
+            "H3",
+            "G2",
+            "F2",
+            "O7",
+            "R8",
+            "L10",
+            "L11",
+            "L9",
+            "N11",
+            "S10",
+            "K11",
+            "H2",
+            "J3",
+            "M11",
+            "M12"
+          ]
+        },
+        {
+          "move": "J10",
+          "scoreLead": -4.64648043,
+          "winrate": 0.112431783,
+          "visits": 236,
+          "pv": [
+            "J10",
+            "J9",
+            "L10",
+            "L9",
+            "K11",
+            "K9",
+            "M10",
+            "N11",
+            "S10",
+            "M9",
+            "G3",
+            "H3",
+            "G2",
+            "F2",
+            "N12",
+            "M11"
+          ]
+        },
+        {
+          "move": "O7",
+          "scoreLead": -3.66391961,
+          "winrate": 0.177443374,
+          "visits": 43,
+          "pv": [
+            "O7",
+            "R8",
+            "J10",
+            "N11",
+            "S10",
+            "J9",
+            "L10",
+            "L11",
+            "K11",
+            "K9"
+          ]
+        },
+        {
+          "move": "E8",
+          "scoreLead": -3.36807251,
+          "winrate": 0.143006277,
+          "visits": 38,
+          "pv": [
+            "E8",
+            "J10",
+            "G3",
+            "H3",
+            "G2",
+            "F2",
+            "H2",
+            "J2",
+            "G7",
+            "H7",
+            "G6"
+          ]
+        }
+      ],
+      "played_rank": null,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 146,
+      "played_move": "S10",
+      "best_move": "F6",
+      "point_loss": 4.21,
+      "severity": "blunder",
+      "top_moves": [
+        {
+          "move": "F6",
+          "scoreLead": -4.18902801,
+          "winrate": 0.110353222,
+          "visits": 126,
+          "pv": [
+            "F6",
+            "J10",
+            "G3",
+            "H3",
+            "G2",
+            "H2",
+            "G6",
+            "D8"
+          ]
+        },
+        {
+          "move": "G3",
+          "scoreLead": -4.1885049,
+          "winrate": 0.142628782,
+          "visits": 419,
+          "pv": [
+            "G3",
+            "H3",
+            "G2",
+            "F2",
+            "O7",
+            "R8",
+            "M10",
+            "N11",
+            "S10",
+            "M9",
+            "L9",
+            "N8",
+            "L10",
+            "L8",
+            "K9"
+          ]
+        },
+        {
+          "move": "O7",
+          "scoreLead": -4.98980118,
+          "winrate": 0.146239393,
+          "visits": 93,
+          "pv": [
+            "O7",
+            "R8",
+            "M10",
+            "N11",
+            "S10",
+            "M11",
+            "L11",
+            "L10",
+            "M9",
+            "N13",
+            "L12",
+            "M13",
+            "L8",
+            "K8"
+          ]
+        },
+        {
+          "move": "J10",
+          "scoreLead": -4.14026598,
+          "winrate": 0.141063927,
+          "visits": 286,
+          "pv": [
+            "J10",
+            "J9",
+            "L10",
+            "L9",
+            "K11",
+            "K9",
+            "M10",
+            "N11",
+            "S10",
+            "M9",
+            "G3",
+            "H3",
+            "G2",
+            "F2",
+            "N12",
+            "M11"
+          ]
+        },
+        {
+          "move": "L10",
+          "scoreLead": -2.36742984,
+          "winrate": 0.227233355,
+          "visits": 26,
+          "pv": [
+            "L10",
+            "L11",
+            "J10",
+            "K9",
+            "G3",
+            "H3",
+            "G2",
+            "H2"
+          ]
+        }
+      ],
+      "played_rank": null,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 148,
+      "played_move": "G3",
+      "best_move": "E8",
+      "point_loss": 0.43,
+      "severity": "ok",
+      "top_moves": [
+        {
+          "move": "E8",
+          "scoreLead": -0.561032366,
+          "winrate": 0.384167064,
+          "visits": 263,
+          "pv": [
+            "E8",
+            "J10",
+            "G7",
+            "H7",
+            "G3",
+            "H3",
+            "G2",
+            "F2",
+            "L11",
+            "L10",
+            "T18",
+            "H2",
+            "E2"
+          ]
+        },
+        {
+          "move": "G3",
+          "scoreLead": -0.126792049,
+          "winrate": 0.448141103,
+          "visits": 88,
+          "pv": [
+            "G3",
+            "D8",
+            "E8",
+            "E9",
+            "C8",
+            "D9",
+            "C9",
+            "H3",
+            "G2",
+            "F2"
+          ]
+        },
+        {
+          "move": "L10",
+          "scoreLead": -0.396623529,
+          "winrate": 0.440630427,
+          "visits": 31,
+          "pv": [
+            "L10",
+            "L9",
+            "G3",
+            "H3",
+            "L11",
+            "J10",
+            "G2"
+          ]
+        },
+        {
+          "move": "E7",
+          "scoreLead": -0.0316865823,
+          "winrate": 0.46236219,
+          "visits": 13,
+          "pv": [
+            "E7",
+            "F6",
+            "G3",
+            "H3",
+            "G2",
+            "F2",
+            "L10"
+          ]
+        },
+        {
+          "move": "F6",
+          "scoreLead": -0.000877887847,
+          "winrate": 0.462896681,
+          "visits": 4,
+          "pv": [
+            "F6",
+            "G6",
+            "G3"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 150,
+      "played_move": "G2",
+      "best_move": "E8",
+      "point_loss": 0.84,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "E8",
+          "scoreLead": -0.611323464,
+          "winrate": 0.395795465,
+          "visits": 138,
+          "pv": [
+            "E8",
+            "G2",
+            "F7",
+            "G7",
+            "T18",
+            "D2",
+            "C2",
+            "E2",
+            "L10",
+            "L11",
+            "L9",
+            "K11",
+            "M11",
+            "N11"
+          ]
+        },
+        {
+          "move": "G2",
+          "scoreLead": 0.229477282,
+          "winrate": 0.504196871,
+          "visits": 190,
+          "pv": [
+            "G2",
+            "D8",
+            "E8",
+            "E9",
+            "C8",
+            "D7",
+            "C7",
+            "F2",
+            "L10",
+            "L9",
+            "L11",
+            "J10",
+            "D9"
+          ]
+        },
+        {
+          "move": "L10",
+          "scoreLead": -0.228676649,
+          "winrate": 0.450492633,
+          "visits": 68,
+          "pv": [
+            "L10",
+            "L11",
+            "L9",
+            "K11",
+            "O7",
+            "R8",
+            "M11",
+            "N11",
+            "M12",
+            "N12",
+            "M13",
+            "M9"
+          ]
+        },
+        {
+          "move": "O7",
+          "scoreLead": 1.37917263,
+          "winrate": 0.63704465,
+          "visits": 3,
+          "pv": [
+            "O7",
+            "R8",
+            "L10"
+          ]
+        },
+        {
+          "move": "L17",
+          "scoreLead": 2.92431331,
+          "winrate": 0.776245587,
+          "visits": 1,
+          "pv": [
+            "L17"
+          ]
+        }
+      ],
+      "played_rank": 2,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 152,
+      "played_move": "H2",
+      "best_move": "L10",
+      "point_loss": 0.52,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "L10",
+          "scoreLead": -0.408047124,
+          "winrate": 0.434182159,
+          "visits": 168,
+          "pv": [
+            "L10",
+            "L9",
+            "E8",
+            "T18",
+            "Q19",
+            "J10",
+            "L11",
+            "S16",
+            "S17",
+            "T17",
+            "S18",
+            "S16",
+            "O7"
+          ]
+        },
+        {
+          "move": "E8",
+          "scoreLead": -0.253468988,
+          "winrate": 0.434235317,
+          "visits": 119,
+          "pv": [
+            "E8",
+            "J10",
+            "G7",
+            "H7",
+            "L11",
+            "L10",
+            "T18",
+            "H2"
+          ]
+        },
+        {
+          "move": "H2",
+          "scoreLead": 0.108828744,
+          "winrate": 0.488448378,
+          "visits": 50,
+          "pv": [
+            "H2",
+            "J2",
+            "E8",
+            "J10",
+            "J3",
+            "H1",
+            "H4",
+            "G1",
+            "G6",
+            "H6",
+            "H5",
+            "H3"
+          ]
+        },
+        {
+          "move": "E7",
+          "scoreLead": -0.451776596,
+          "winrate": 0.445597926,
+          "visits": 43,
+          "pv": [
+            "E7",
+            "F6",
+            "L10",
+            "L11",
+            "L9",
+            "K11",
+            "O7",
+            "P6",
+            "M11",
+            "N11",
+            "M12",
+            "N12",
+            "N13",
+            "M13",
+            "L12"
+          ]
+        },
+        {
+          "move": "O7",
+          "scoreLead": 0.802895626,
+          "winrate": 0.617369064,
+          "visits": 9,
+          "pv": [
+            "O7",
+            "R8",
+            "H2",
+            "J2",
+            "J3",
+            "H1"
+          ]
+        }
+      ],
+      "played_rank": 3,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 154,
+      "played_move": "J3",
+      "best_move": "E8",
+      "point_loss": 2.48,
+      "severity": "mistake",
+      "top_moves": [
+        {
+          "move": "E8",
+          "scoreLead": -0.937016521,
+          "winrate": 0.387187626,
+          "visits": 756,
+          "pv": [
+            "E8",
+            "G1",
+            "F7",
+            "J10",
+            "H7",
+            "F5",
+            "J6",
+            "E6",
+            "C7",
+            "T18",
+            "Q19",
+            "S16",
+            "S17",
+            "T17"
+          ]
+        },
+        {
+          "move": "L10",
+          "scoreLead": 0.0130799361,
+          "winrate": 0.483277667,
+          "visits": 98,
+          "pv": [
+            "L10",
+            "L9",
+            "E8",
+            "J10",
+            "L11",
+            "T18",
+            "Q19",
+            "S16",
+            "S17",
+            "T17",
+            "S18",
+            "S16",
+            "O7"
+          ]
+        },
+        {
+          "move": "G6",
+          "scoreLead": 1.20226794,
+          "winrate": 0.635137378,
+          "visits": 23,
+          "pv": [
+            "G6",
+            "F5",
+            "E7",
+            "F6",
+            "F7",
+            "G7",
+            "H6",
+            "H7",
+            "H4"
+          ]
+        },
+        {
+          "move": "O7",
+          "scoreLead": 1.1165384,
+          "winrate": 0.642324889,
+          "visits": 19,
+          "pv": [
+            "O7",
+            "R8",
+            "H4",
+            "H1",
+            "J3",
+            "G1",
+            "G6",
+            "H3",
+            "F5"
+          ]
+        },
+        {
+          "move": "J3",
+          "scoreLead": 1.54471148,
+          "winrate": 0.669555449,
+          "visits": 18,
+          "pv": [
+            "J3",
+            "H1",
+            "H4",
+            "G1",
+            "G6",
+            "F5",
+            "F6",
+            "E5",
+            "H3"
+          ]
+        }
+      ],
+      "played_rank": 5,
+      "visits": 400,
+      "source": "quick_db"
+    },
+    {
+      "move_number": 162,
+      "played_move": "H3",
+      "best_move": "G8",
+      "point_loss": 1.43,
+      "severity": "inaccuracy",
+      "top_moves": [
+        {
+          "move": "G8",
+          "scoreLead": 6.18503687,
+          "winrate": 0.937935976,
+          "visits": 286,
+          "pv": [
+            "G8",
+            "F7",
+            "F8",
+            "H8",
+            "E8",
+            "H6",
+            "L10",
+            "L9",
+            "E9",
+            "J8",
+            "L11",
+            "T18",
+            "Q19"
+          ]
+        },
+        {
+          "move": "O7",
+          "scoreLead": 8.12176522,
+          "winrate": 0.952124227,
+          "visits": 45,
+          "pv": [
+            "O7",
+            "R8",
+            "G6",
+            "F6",
+            "H6",
+            "F5",
+            "F7",
+            "E7"
+          ]
+        },
+        {
+          "move": "G6",
+          "scoreLead": 12.3264284,
+          "winrate": 0.974076315,
+          "visits": 26,
+          "pv": [
+            "G6",
+            "F6",
+            "H6",
+            "F5",
+            "F7",
+            "E7",
+            "G8",
+            "E8",
+            "H3",
+            "K3",
+            "H5"
+          ]
+        },
+        {
+          "move": "H3",
+          "scoreLead": 7.61772035,
+          "winrate": 0.96986036,
+          "visits": 27,
+          "pv": [
+            "H3",
+            "K3",
+            "G8",
+            "E8",
+            "F7",
+            "H5",
+            "E7"
+          ]
+        },
+        {
+          "move": "L9",
+          "scoreLead": 13.4248795,
+          "winrate": 0.973540973,
+          "visits": 7,
+          "pv": [
+            "L9",
+            "L10",
+            "G8",
+            "F7",
+            "F8"
+          ]
+        }
+      ],
+      "played_rank": 4,
+      "visits": 400,
+      "source": "quick_db"
+    }
+  ],
+  "generated_at": "2026-07-29T10:06:17.867834+00:00"
+}

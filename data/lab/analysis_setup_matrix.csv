@@ -1,0 +1,8 @@
+pipeline_id,label,fuseki,middle,best_move_pct,top3_pct,delta_mean,flip_pct,gpu_est_s,quality_score,value_score
+P2_quick_fuseki_f6,Quick + fuseki F6,F6,S0,78.39,68.89,0.341,17.54,149.5,38.22,14.04
+P4_quick_f6_s4,Quick + F6 + top3 milieu,F6,S4,78.39,68.89,0.347,18.22,157.4,38.02,13.824
+P3_quick_fuseki_f5,Quick + fuseki F5,F5,S0,78.39,64.44,0.345,20.04,141.2,36.79,13.671
+P1_quick_seul,Quick seul,F0,S0,76.72,62.22,0.342,15.87,140.0,36.54,13.602
+P5_quick_f6_s5,Quick + F6 + tiered milieu,F6,S5,77.71,68.89,0.364,21.61,150.7,36.9,13.534
+P6_quick_f3,Quick + fuseki F3,F3,S0,78.39,66.67,0.339,26.7,156.5,35.96,13.088
+P0_actuel,Actuel (prod),F0,S1,75.36,62.22,0.39,26.06,198.4,33.48,11.621

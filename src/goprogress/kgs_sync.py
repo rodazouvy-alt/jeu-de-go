@@ -15,7 +15,8 @@ from bs4 import BeautifulSoup
 
 from .config import resolve_path
 from .db import Database
-from .sgf_parse import parse_sgf, player_color, opponent_name
+from .enrich import enrich_game_timing
+from .sgf_parse import parse_sgf, player_color, opponent_name, player_rank, opponent_rank
 
 
 class KgsSync:
@@ -144,10 +145,13 @@ class KgsSync:
                 print(f"  ERREUR téléchargement {meta['kgs_url']}: {exc}")
                 continue
 
+            prank = orank = ""
             try:
                 parsed = parse_sgf(dest)
                 pcolor = player_color(parsed, self.username)
                 opponent = opponent_name(parsed, self.username)
+                prank = player_rank(parsed, self.username)
+                orank = opponent_rank(parsed, self.username)
             except Exception:
                 pcolor = None
                 opponent = "?"
@@ -166,7 +170,10 @@ class KgsSync:
                 "handicap": meta["handicap"],
                 "board_size": meta["board_size"],
                 "downloaded_at": now,
+                "player_rank": prank,
+                "opponent_rank": orank,
             })
+            enrich_game_timing(self.db, game_id, dest)
             count += 1
             print(f"  [{count}] partie #{game_id} -> {dest.name}")
 
@@ -210,7 +217,7 @@ class KgsSync:
                 except Exception:
                     continue
 
-                self.db.upsert_game({
+                game_id = self.db.upsert_game({
                     "kgs_url": kgs_url,
                     "sgf_path": str(dest.relative_to(resolve_path("."))),
                     "played_at": None,
@@ -224,7 +231,10 @@ class KgsSync:
                     "handicap": parsed.handicap,
                     "board_size": parsed.board_size,
                     "downloaded_at": now,
+                    "player_rank": player_rank(parsed, self.username) if pcolor else "",
+                    "opponent_rank": opponent_rank(parsed, self.username) if pcolor else "",
                 })
+                enrich_game_timing(self.db, game_id, dest)
                 count += 1
         print(f"  {count} parties indexées depuis le ZIP")
         if count > 0:
@@ -242,6 +252,31 @@ class KgsSync:
         if recent_first:
             months = list(reversed(months))
         print(f"{len(months)} mois trouvés dans les archives KGS")
+        total = 0
+        for i, (year, month) in enumerate(months, 1):
+            print(f"\n[{i}/{len(months)}] === {year}-{month:02d} ===")
+            try:
+                if use_zip:
+                    total += self.sync_month_zip(year, month, force=force)
+                else:
+                    total += self.sync_month(year, month)
+            except httpx.HTTPError as exc:
+                print(f"  ERREUR mois {year}-{month}: {exc}")
+                continue
+        return total
+
+    def sync_since_year(
+        self,
+        since_year: int,
+        *,
+        use_zip: bool = True,
+        force: bool = False,
+    ) -> int:
+        months = [m for m in self.list_months() if m[0] >= since_year]
+        if not months:
+            print(f"Aucun mois KGS trouvé depuis {since_year}")
+            return 0
+        print(f"{len(months)} mois depuis {since_year} (archives KGS)")
         total = 0
         for i, (year, month) in enumerate(months, 1):
             print(f"\n[{i}/{len(months)}] === {year}-{month:02d} ===")

@@ -1,0 +1,14 @@
+{
+  "setup_done": true,
+  "reconcile_stats": {
+    "updated": 1691,
+    "loss_fixed": 1691,
+    "best_fixed": 0,
+    "total": 14514
+  },
+  "game_ids": [
+    109,
+    108,
+    106
+  ]
+}

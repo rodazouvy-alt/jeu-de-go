@@ -11,20 +11,67 @@ katago:
   model: E:/lizzie/KataGo28b.gz
   config: config/katago_quick.cfg
   deep_config: config/katago_deep.cfg
+  quick_config_parallel: config/katago_quick_parallel.cfg
+  deep_config_parallel: config/katago_deep_parallel.cfg
   working_dir: E:/lizzie
   startup_wait_seconds: 30
   num_analysis_threads: 8
   # Débit réel : ~600 visits/s à vide, ~120-300 visits/s si séquences en cours
   visits_per_second: 200
   visits_per_second_idle: 600
-  # Pass 1 — scan de masse (~2 s/coup en charge)
+  # Pass 1 — scan complet (~2 s/coup) : suffisant pour repérer les erreurs
   quick_max_visits: 400
-  # Pass 2 — coups suspects (~20 s en charge, qualité ~9d)
-  deep_max_visits: 4000
-  # Méga-blunders (~35 s en charge)
-  deep_hard_max_visits: 7000
-  # Seuil quick : quels coups méritent une re-analyse deep
+  # Pass 2 — coups suspects uniquement (mistake+). 1000 visits ≈ qualité review sérieuse
+  # (KataGo : ~500-1000 casual, ~2000 positions critiques ; au-delà rendement faible)
+  deep_max_visits: 1000
+  # Méga-blunders : un peu plus de visits, pas besoin de 7000
+  deep_hard_max_visits: 2000
+  # Pass 1 : quels coups déclenchent le deep (inaccuracy = plus de coups re-analysés)
   deep_rerun_min_severity: mistake
+  restart_every_seconds: 3600  # redemarrage preventif KataGo (1 h)
+  # Modèle Human SL (prédiction style/rang humain — déjà dans E:/lizzie/)
+  human_model: E:/lizzie/KataGo18human.gz
+
+opening_analysis:
+  max_moves: 30              # fuseki / début de partie
+  max_visits: 1000           # F6 standard (labo GPU)
+  hard_max_visits: 2000      # F6 positions ambiguës (#1-#2 < 0.5 pt)
+  min_point_loss: 0.5        # seuil re-analyse fuseki
+  ambiguous_gap: 0.5         # écart score #1-#2 pour 2000v
+  player_moves_only: true
+  strategy: f6
+  supplement_max_game_id: 47
+  continue_from_game_id: 48
+  run_patterns_after_batch: true
+
+# Boucle unique (run_analysis_loop.bat)
+analysis:
+  continue_from_game_id: null   # desactive pour re-analyse 2024+ complete
+  batch_size: 4                # parties par lot — pipeline parallele
+  parallel_pipeline: true       # lot optimise : quick en rafale puis fuseki+SL
+  gpu_vram_gb: 12               # RTX 3060 detectee (nvidia-smi)
+  patterns_every_n_batches: 5  # recalc fuseki/joseki tous les 5 lots (~20 parties)
+  patterns_after_each_batch: false
+  mark_opening_on_complete: false
+  deep_middle_enabled: false   # labo GPU : quick + F6, pas de deep milieu
+
+human_sl:
+  model: E:/lizzie/KataGo18human.gz
+  config: config/katago_human.cfg
+  player_profile: rank_3d   # votre niveau actuel
+  min_point_loss: 1.5       # hors ouverture
+  opening_moves: 80           # fuseki + début de milieu de jeu
+  opening_min_point_loss: 0.5 # imprécisions en ouverture → Human SL
+  compare_ranks:
+    - rank_3d      # vous — « je devrais voir ça ? »
+    - rank_4d
+    - rank_5d
+    - rank_6d
+    - rank_7d      # fort amateur
+    - rank_8d
+    - rank_9d      # plafond amateur
+    - proyear_2020 # style pro récent (tendances ouverture)
+    - proyear_2023 # dernier palier pro dans le modèle (pas 2024+)
 
 thresholds:
   # Seuils calibrés 3 dan (perte en points)
@@ -46,6 +93,53 @@ paths:
   analysis_dir: data/analysis
   db_path: data/db/go_progress.db
   reports_dir: data/reports
+  publish_dir: data/publish
+
+# Miroir mobile 24/7 (Cloudflare Pages) — secrets dans config.local.yaml
+cloudflare:
+  pages_project: ""              # obligatoire pour le miroir auto
+  pages_url: ""                  # ex. https://go-progress.pages.dev (favori téléphone)
+  auto_publish_on_patterns: true # sync après chaque recalcul patterns (boucle analyse)
+  auto_deploy_pages: true        # wrangler pages deploy (CLOUDFLARE_API_TOKEN ou wrangler login)
+  sync_on_finalize: true
+  publish_games_limit: 200
+  publish_full_diagrams: true
+
+report:
+  auto_refresh: true  # régénère latest.html après chaque partie analysée
+
+review:
+  output_dir: data/review_sgf
+  top_moves: 5
+  lizzie:
+    # D'après E:/lizzie/lizzie.bat (Baduk Megapack)
+    java: E:/LizzieYZY/jre/java11/bin/javaw.exe
+    jar: E:/lizzie/lizzie.jar
+    working_dir: E:/lizzie
+  katrain:
+    executable: ""  # optionnel — sinon ouverture SGF par défaut Windows
+
+pro_corpus:
+  gogod:
+    downloads_dir: C:/Users/rodaz/Downloads
+    sgf_dir: data/pro_corpus/gogod/sgf
+    meta_dir: data/pro_corpus/gogod/meta
+    manifest_path: data/pro_corpus/gogod/manifest.json
+    patch_index_path: data/pro_corpus/gogod/patch_index.json
+
+patterns:
+  patch_radius: 7
+  cluster_top_n: 10
+  fuseki_top_n: 15
+  joseki_top_n: 15
+  fuseki_max_move: 30
+  min_point_loss: 4.0          # milieu / fin : blunders seulement (formes récurrentes)
+  fuseki_min_point_loss: 0.5   # ouverture : imprécisions incluses (coups 1–30)
+  pro_themes:
+    - corner_opening
+    - invasion
+    - reduction
+    - fight
 
 dashboard:
   host: 127.0.0.1

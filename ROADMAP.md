@@ -135,11 +135,21 @@ Hypothèse conservative pour 20 ans de rapide régulier :
 
 #### Pass 2 — Analyse profonde (sélective)
 
-- [ ] Parties avec ≥ 3 blunders ou perte totale ≥ 15 pts
-- [ ] Coups flaggés en pass 1 : 2000–5000 visits
+- [x] **Labo deep visits (juil. 2026)** — voir section [Décisions labo GPU](#décisions-labo-gpu-juillet-2026)
+- [ ] Parties avec ≥ 3 blunders ou perte totale ≥ 15 pts *(révisé : ne plus deep massif)*
+- [ ] Coups flaggés en pass 1 : ciblage top-N pertes ou fuseki dédié
 - [ ] Variations principales stockées pour étude
 
 **Livrable** : table `moves` avec ~coups × parties analysées, prête pour l'agrégation.
+
+#### Pass 2b — Fuseki systématique (nouveau, juil. 2026)
+
+- [x] **Labo fuseki** — `scripts/lab/fuseki/` + `data/lab/fuseki/fuseki_report.md` *(juil. 2026, terminé)*
+- [ ] Implémenter **F6** dans `opening_analysis.py` (erreurs 1000v + ambigus 2000v)
+- [ ] `mark_opening_on_complete: false` — forcer passe fuseki sur le backlog
+- [ ] Human SL + patterns fuseki déjà en place (seuil 0,5 pt ouverture)
+
+**Livrable** : couverture fuseki 100 %, dashboard « erreurs fuseki » fiable pour l'étude YD.
 
 ---
 
@@ -259,7 +269,78 @@ Hypothèse conservative pour 20 ans de rapide régulier :
 
 ---
 
-## Intégrations externes
+## Décisions labo GPU (juillet 2026)
+
+> Labos sur RTX 3060, KataGo 28b, 3 parties récentes (#109, #108, #106).  
+> Rapports : `data/lab/deep_visits_report.md`, `data/lab/fuseki/fuseki_report.md`
+
+### Labo 1 — Deep visits (milieu/fin)
+
+**Question** : comment allouer les visits en phase deep sur les coups suspects ?
+
+| Constat | Détail |
+|---------|--------|
+| Quick 400v suffit en milieu/fin | 73 % best_move vs oracle 4000v ; meilleur que S1 actuel (74 % → en fait 73,9 % < 76,1 % quick) |
+| S1 actuel gaspille le GPU | 175 s / 3 parties, **pire** que quick seul sur best_move et rank_flip |
+| Fuseki dans ce labo | 93 % best_move dès le quick — le problème n'est pas là |
+| Meilleur deep ciblé (si un jour) | S4 top-3 pertes × 2000v — égalité qualité, ~7× moins de GPU |
+
+**Décision** : **ne pas implémenter** de deep massif milieu/fin. Garder quick 400v. Réserver le GPU au fuseki.
+
+### Labo 2 — Fuseki (coups joueur 1–30)
+
+**Question** : quelle passe fuseki systématique (visits, périmètre) pour bosser l'ouverture ?
+
+Parties testées : **#109** (wade), **#101** / **#99** (Shaomi) — 45 coups joueur fuseki au total.
+
+| Strat | Règle | best_move% | top3% | GPU (3 parties) |
+|-------|-------|------------|-------|-----------------|
+| F0 | quick 400v (contrôle) | 77,8 % | 62,2 % | 0 s |
+| F3 | tes coups 1–30 × 1000v | **82,2 %** | 66,7 % | 50 s |
+| F5 | erreurs fuseki seulement × 1000v | **82,2 %** | 64,4 % | **4 s** |
+| F6 | ambigus × 2000v + erreurs × 1000v | **82,2 %** | **68,9 %** | 28 s |
+| F4 | tous coups 1–30 × 1000v | 77,8 % | 68,9 % | 133 s |
+
+**Constats** :
+- Le quick seul **sous-estime** le fuseki vs oracle : −4,4 pt sur best_move.
+- Re-analyser **tous** les coups joueur à 1000v (F3) ou **seulement les erreurs** (F5) donne le même best_move — mais F5 coûte **12× moins** de GPU.
+- Pour l'**étude joseki** (stabilité du top 3), **F6** est optimal : top3 68,9 % (comme F4) pour 5× moins de GPU.
+- F1/F2/F4 analysent aussi l'adversaire ou tous les coups : peu de gain, beaucoup de GPU.
+
+**Décision fuseki** :
+- **Prod cible** : **F6** — erreurs fuseki (`point_loss > 0,5`) à 1000v, positions ambiguës (écart #1–#2 < 0,5 pt) à 2000v.
+- **Budget minimal** : F5 si GPU très contraint (~1 s/partie).
+- **À faire** : `mark_opening_on_complete: false` + passe fuseki systématique sur chaque partie.
+
+Rapport complet : `data/lab/fuseki/fuseki_report.md`
+
+### Budget GPU cible (par partie)
+
+```
+Quick 400v      → partie entière           ~2–3 min   [inchangé]
+Fuseki F6       → erreurs + ambigus 1–30   ~10–30 s   [prioritaire — labo validé]
+Deep milieu     → OFF                      ~0 s       [labo 1 : pas rentable]
+```
+
+### Principes révisés
+
+1. **Deux pipelines** : fuseki (étude) ≠ milieu/fin (détection blunders).
+2. **Couverture > visits** en fuseki : toutes les parties, pas seulement le quick global.
+3. **Pas de deep milieu massif** : le labo l'a invalidé sur données réelles.
+
+### Setup optimal (synthèse croisée)
+
+Rapport comparatif : **`data/lab/analysis_setup_report.md`** (généré par `scripts/lab/generate_setup_report.py`).
+
+| Passe | Rôle | Visits | Quand |
+|-------|------|--------|-------|
+| 1 Quick | Toute la partie | 400v | Toujours |
+| 2 Fuseki F6 | Tes coups 1–30 | 1000v (erreurs) / 2000v (ambigus) | Après quick |
+| 3 Deep milieu | — | **OFF** | Jamais (quick suffit) |
+
+**vs actuel** : +3 % best_move, −8,5 % rank_flip, −49 s GPU/partie.
+
+---
 
 | Outil | Rôle | Mode |
 |-------|------|------|

@@ -1,0 +1,25 @@
+(;FF[4]
+C[Go Progress — position avant coup 214. Variations = alternatives KataGo (1=meilleur).]
+CA[UTF-8]GM[1]GN[Review coup 214]KM[0.5]PB[Rodolphe]PW[York]RE[?]SZ[19];W[qp];
+B[dd];W[fq];B[hq];W[fo];B[dn];W[fm];B[dl];W[ip];B[jq];W[iq];B[ir];W[hr];B[gr];
+W[jr];B[hs];W[kq];B[hp];W[jp];B[hn];W[eo];B[do];W[dq];B[eq];W[er];B[ep];W[fp];
+B[fr];W[cq];B[bp];W[cp];B[co];W[bq];B[bo];W[dr];B[hl];W[fk];B[bs];W[cs];B[br];
+W[aq];B[es];W[gm];B[hm];W[ho];B[go];W[io];B[gn];W[em];B[gp];W[dm];B[cm];W[cl];
+B[bl];W[ck];B[bk];W[bm];B[cn];W[cj];B[bj];W[ci];B[bi];W[bh];B[ch];W[bg];B[dh];
+W[ai];B[dk];W[ce];B[cd];W[de];B[be];W[bf];B[bd];W[ee];B[ed];W[fe];B[gc];W[qf];
+B[qq];W[pq];B[pp];W[pr];B[qo];W[rp];B[ro];W[po];B[op];W[rq];B[on];W[pn];B[pm];
+W[qn];B[qm];W[rn];B[rm];W[oo];B[no];W[so];B[qh];W[om];B[nn];W[ol];B[qj];W[mm];
+B[ln];W[lm];B[kn];W[jm];B[km];W[kl];B[jn];W[in];B[jl];W[im];B[ll];W[kk];B[nm];
+W[ml];B[nl];W[hj];B[il];W[jk];B[mk];W[lk];B[mn];W[hk];B[gl];W[ek];B[dj];W[fs];
+B[gs];W[gk];B[ap];W[gq];B[cr];W[nc];B[pf];W[pg];B[qg];W[pe];B[of];W[oe];B[qe];
+W[qd];B[rf];W[re];B[qf];W[od];B[qc];W[pc];B[rd];W[hd];B[hc];W[ei];B[di];W[ic];
+B[id];W[jc];B[he];W[gd];B[fd];W[ge];B[ie];W[gg];B[ik];W[ij];B[jj];W[ki];B[ji];
+W[jh];B[ii];W[kg];B[kj];W[mj];B[li];W[lj];B[kh];W[nk];B[ok];W[oj];B[pk];W[lg];
+B[mi];W[ni];B[mh];W[nh];B[mg];W[ng];B[nf];W[mf];B[lf];W[me];B[jg];W[kf];B[ih];
+W[lh];B[jf];W[ke];B[hg];W[ki];B[li];W[hf];B[if];W[gf];B[gh];W[fh];B[gi];W[hi];
+B[hh];W[fi];B[ej];W[fj](;B[dp]C[#1 D16 | score +118.6 | WR 100.0%]LB[dp:1])(;
+B[en]C[#2 E14 | score +67.3 | WR 98.8%]LB[en:2])(;B[fn]
+C[#3 F14 | score +69.9 | WR 98.5%]LB[fn:3])(;B[el]
+C[#4 E12 | score +44.8 | WR 99.4%]LB[el:4])(;B[fl]
+C[#5 F12 | score +71.0 | WR 99.2%]LB[fl:5])(;B[eg]
+C[#6 E7 | VOTRE COUP (-108.0 pts)]LB[eg:6]))

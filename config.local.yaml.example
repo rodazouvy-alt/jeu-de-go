@@ -1,0 +1,17 @@
+# Copiez ce fichier en config.local.yaml (ignoré par git) et renseignez vos valeurs.
+# Ne commitez jamais config.local.yaml (tokens / noms de projet).
+
+cloudflare:
+  # Nom du projet Cloudflare Pages (Workers & Pages → votre projet)
+  pages_project: "go-progress-rodolphe"
+  # URL affichée dans les logs (optionnel)
+  pages_url: "https://go-progress-rodolphe.pages.dev"
+  # Miroir auto : export HTML + push Pages quand les patterns sont recalculés
+  auto_publish_on_patterns: true
+  auto_deploy_pages: true
+  sync_on_finalize: true
+  publish_games_limit: 200
+
+# Token API Cloudflare (ne pas mettre ici si possible) :
+#   PowerShell : $env:CLOUDFLARE_API_TOKEN = "votre-token"
+#   wrangler login  (alternative interactive)

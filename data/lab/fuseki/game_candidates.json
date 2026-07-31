@@ -1,0 +1,216 @@
+{
+  "generated_at": "2026-07-29T10:31:18.373650+00:00",
+  "fuseki_max_move": 30,
+  "top_candidates": [
+    {
+      "id": 109,
+      "opponent": "wade",
+      "year": 2026,
+      "month": 7,
+      "result": "W+Time",
+      "total_moves": 143,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 3,
+      "fuseki_grey": 2,
+      "corner_moves": 13,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202859,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (3)",
+        "zone grise (2)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 101,
+      "opponent": "Shaomi",
+      "year": 2026,
+      "month": 7,
+      "result": "W+Time",
+      "total_moves": 168,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 4,
+      "fuseki_grey": 4,
+      "corner_moves": 12,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202859,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (4)",
+        "zone grise (4)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 99,
+      "opponent": "Shaomi",
+      "year": 2026,
+      "month": 7,
+      "result": "B+Resign",
+      "total_moves": 145,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 4,
+      "fuseki_grey": 4,
+      "corner_moves": 14,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202859,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (4)",
+        "zone grise (4)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 136,
+      "opponent": "LifeDeath",
+      "year": 2026,
+      "month": 6,
+      "result": "W+Resign",
+      "total_moves": 168,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 4,
+      "fuseki_grey": 5,
+      "corner_moves": 14,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202849,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (4)",
+        "zone grise (5)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 133,
+      "opponent": "Goprince",
+      "year": 2026,
+      "month": 6,
+      "result": "W+Resign",
+      "total_moves": 115,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 5,
+      "fuseki_grey": 5,
+      "corner_moves": 14,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202849,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (5)",
+        "zone grise (5)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 128,
+      "opponent": "Goprince",
+      "year": 2026,
+      "month": 6,
+      "result": "W+Time",
+      "total_moves": 165,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 6,
+      "fuseki_grey": 6,
+      "corner_moves": 15,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202849,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (6)",
+        "zone grise (6)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 127,
+      "opponent": "Goprince",
+      "year": 2026,
+      "month": 6,
+      "result": "W+Time",
+      "total_moves": 109,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 5,
+      "fuseki_grey": 5,
+      "corner_moves": 14,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202849,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (5)",
+        "zone grise (5)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 126,
+      "opponent": "Goprince",
+      "year": 2026,
+      "month": 6,
+      "result": "W+Resign",
+      "total_moves": 181,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 6,
+      "fuseki_grey": 6,
+      "corner_moves": 13,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202849,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (6)",
+        "zone grise (6)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 125,
+      "opponent": "Goprince",
+      "year": 2026,
+      "month": 6,
+      "result": "W+Resign",
+      "total_moves": 181,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 4,
+      "fuseki_grey": 4,
+      "corner_moves": 14,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202849,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (4)",
+        "zone grise (4)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 121,
+      "opponent": "Kurosawa",
+      "year": 2026,
+      "month": 6,
+      "result": "W+Resign",
+      "total_moves": 101,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 5,
+      "fuseki_grey": 5,
+      "corner_moves": 11,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202849,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (5)",
+        "zone grise (5)",
+        "coins/joseki"
+      ]
+    }
+  ]
+}

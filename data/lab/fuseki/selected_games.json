@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-07-29T10:31:18.374953+00:00",
+  "selected": [
+    {
+      "id": 109,
+      "opponent": "wade",
+      "year": 2026,
+      "month": 7,
+      "result": "W+Time",
+      "total_moves": 143,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 3,
+      "fuseki_grey": 2,
+      "corner_moves": 13,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202859,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (3)",
+        "zone grise (2)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 101,
+      "opponent": "Shaomi",
+      "year": 2026,
+      "month": 7,
+      "result": "W+Time",
+      "total_moves": 168,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 4,
+      "fuseki_grey": 4,
+      "corner_moves": 12,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202859,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (4)",
+        "zone grise (4)",
+        "coins/joseki"
+      ]
+    },
+    {
+      "id": 99,
+      "opponent": "Shaomi",
+      "year": 2026,
+      "month": 7,
+      "result": "B+Resign",
+      "total_moves": 145,
+      "fuseki_player_moves": 15,
+      "fuseki_errors": 4,
+      "fuseki_grey": 4,
+      "corner_moves": 14,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202859,
+      "score_notes": [
+        "récence",
+        "erreurs fuseki (4)",
+        "zone grise (4)",
+        "coins/joseki"
+      ]
+    }
+  ]
+}

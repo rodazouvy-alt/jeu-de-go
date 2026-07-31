@@ -1,0 +1,15 @@
+(;FF[4]BR[2d]
+C[Go Progress — position avant coup 76. Variations = alternatives KataGo (1=meilleur).]
+CA[UTF-8]GM[1]GN[Review coup 76]KM[0.5]PB[phboom]PW[Rodolphe]RE[W+Time]SZ[19]
+WR[3d];B[dp];W[pd];B[dc];W[pp];B[nc];W[qf];B[jd];W[de];B[dh];W[cc];B[cb];W[cd];
+B[eb];W[fe];B[gd];W[cg];B[ch];W[dg];B[fh];W[ge];B[cm];W[hd];B[hc];W[gc];B[gb];
+W[fd];B[ic];W[mq];B[jq];W[fq];B[dr];W[iq];B[ir];W[jp];B[hq];W[ip];B[kq];W[hp];
+B[gq];W[gp];B[fp];W[kp];B[lq];W[lp];B[kr];W[fr];B[gr];W[gs];B[hr];W[ep];B[fo];
+W[eo];B[fn];W[eq];B[co];W[en];B[fm];W[mr];B[js];W[hs];B[fs];W[es];B[ls];W[lr];
+B[em];W[fs];B[is];W[ms];B[pg];W[pf];B[ng];W[og];B[oh];W[of];B[rp](;
+C[#1 R13 | score +23.0 | WR 0.1%]LB[qm:1]W[qm])(;
+C[#2 S14 | score +22.9 | WR 0.1%]LB[rn:2]W[rn])(;
+C[#3 N4 | score +22.8 | WR 0.1%]LB[md:3]W[md])(;
+C[#4 R12 | score +23.1 | WR 0.1%]LB[ql:4]W[ql])(;
+C[#5 R14 | score +22.9 | WR 0.1%]LB[qn:5]W[qn])(;
+C[#6 R16 | VOTRE COUP (-2.0 pts)]LB[qp:6]W[qp]))

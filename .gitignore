@@ -11,6 +11,11 @@ data/analysis/
 data/db/
 data/reports/
 data/cache/
+data/publish/
+data/pro_corpus/
+data/*.db
+data/lab/*.db
+data/katago_stdin_test.txt
 
 # Logs
 *.log

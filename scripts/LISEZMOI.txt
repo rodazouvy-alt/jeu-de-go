@@ -1,0 +1,160 @@
+Scripts Go Progress — guide rapide
+
+==================================
+
+
+
+RACINE DU PROJET (raccourcis)
+
+-----------------------------
+
+  setup.bat                  Installation Python (une seule fois)
+
+  start.bat                  Dashboard local (ouvre le navigateur automatiquement)
+
+                             http://127.0.0.1:8787
+
+                             http://127.0.0.1:8787/patterns  (explorateur)
+
+  run_sync.bat               Telecharger des parties KGS
+
+  run_analysis_loop.bat      Boucle d'analyse principale (lots de 3, reprise auto)
+
+  run_finalize_reanalysis.bat  Enrichissements finaux (patterns, rapport)
+
+
+
+QUOTIDIEN — scripts\quotidien\
+
+------------------------------
+
+  Memes scripts que les raccourcis racine (version complete).
+
+  Utilisez les raccourcis a la racine pour un double-clic plus simple.
+
+
+
+OCCASIONNEL — scripts\occasionnel\
+
+----------------------------------
+
+  run_test.bat               Test Phase 0 (sync + 3 analyses + rapport)
+
+  run_pipeline.bat           Sync recent + analyse + rapport (workflow simple)
+
+  run_collect.bat            Collecte KGS complete (tout l'historique)
+
+  run_analyze.bat            Analyser les parties en attente
+
+  run_analyze_deep.bat       Analyse profonde KataGo (coups suspects)
+
+  run_report.bat             Generer le rapport HTML
+
+  run_review.bat             Ouvrir un coup dans Lizzie/KaTrain
+
+  run_katago_check.bat       Verifier KataGo + GPU
+
+  run_enrich.bat             Enrichir rangs/themes sur parties analysees
+
+  run_human_sl.bat           Human SL sur vos erreurs
+
+  run_backfill_human_sl.bat  Remplir Human SL apres restore
+
+  run_backfill_opponent.bat  Completer stats adversaire
+
+  run_patterns.bat           Clustering des blunders
+
+  run_pro_patterns.bat       Patterns pro GoGoD
+
+  run_build_pro_index.bat    Construire l'index GoGoD (long)
+
+  run_import_gogod.bat       Importer le corpus GoGoD
+
+  run_install_human_sl.bat   Installer le modele Human SL KataGo
+
+  sync_cloudflare.bat        Miroir dashboard → Cloudflare Pages (24/7 mobile)
+  run_cloudflare_tunnel.bat  Dashboard live temporaire (PC allumé)
+
+
+
+ARCHIVE — scripts\archive\  (a eviter sauf cas particulier)
+
+-----------------------------------------------------------
+
+  run_prepare_reanalysis.bat  DANGEREUX : sync + reset de toutes les analyses
+
+  run_restore_reanalysis.bat  Restaurer la base apres reset accidentel
+
+  run_night.bat               Ancien pipeline nocturne (remplace par run_analysis_loop)
+
+
+
+ORDRE TYPIQUE AU QUOTIDIEN
+
+--------------------------
+
+  1. run_sync.bat                    (nouvelles parties KGS)
+
+  2. run_analysis_loop.bat           (laisser tourner, fermer Lizzie)
+
+  3. run_finalize_reanalysis.bat     (quand la boucle est terminee)
+
+  4. start.bat                       (consulter le dashboard)
+
+
+
+ACCES DISTANT (sans toujours garder start.bat ouvert)
+
+-----------------------------------------------------
+
+  Dashboard local (PC) :
+
+    http://127.0.0.1:8787
+
+    http://127.0.0.1:8787/patterns
+
+
+
+  Partage temporaire (PC allume, sync auto des nouvelles analyses) :
+
+    scripts\occasionnel\run_cloudflare_tunnel.bat
+
+    - Installez cloudflared : https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/
+
+    - Une URL https://....trycloudflare.com s affiche (gratuit, sans compte)
+
+    - Accessible depuis mobile ou un autre PC
+
+
+
+  Site toujours en ligne (sans PC, snapshot fige) :
+
+    1. scripts\occasionnel\publish_dashboard_static.bat
+
+    2. Deployez le dossier data\publish\ sur Cloudflare Pages (gratuit)
+
+    3. Relancez publish + redeploy apres chaque lot d'analyses
+
+
+
+  Details et couts : docs\CLOUDFLARE.md
+
+
+
+NOTES
+
+-----
+
+  - Fermez Lizzie pendant l'analyse batch (GPU partage).
+
+  - Ne lancez jamais run_prepare_reanalysis.bat sauf pour repartir de zero.
+
+  - Les anciens scripts d'ouverture (parties 1-47, fuseki separe) ont ete supprimes :
+
+    tout est integre dans run_analysis_loop.bat.
+
+  - Le snapshot statique (publish) n inclut pas Lizzie ni les diagrammes dynamiques ;
+
+    utilisez start.bat ou le tunnel pour l experience complete.
+
+

@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-07-29T09:37:57.322629+00:00",
+  "selected": [
+    {
+      "id": 109,
+      "opponent": "wade",
+      "year": 2026,
+      "month": 7,
+      "result": "W+Time",
+      "total_moves": 143,
+      "player_moves": 71,
+      "errors": 32,
+      "big_errors": 6,
+      "grey_zone": 16,
+      "small_errors": 26,
+      "mid_end_mistakes": 12,
+      "early_mega": false,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202869,
+      "score_notes": [
+        "récence",
+        "mix sévérités",
+        "zone grise (16)",
+        "longueur idéale"
+      ]
+    },
+    {
+      "id": 108,
+      "opponent": "Alkapone",
+      "year": 2026,
+      "month": 7,
+      "result": "B+Time",
+      "total_moves": 163,
+      "player_moves": 81,
+      "errors": 26,
+      "big_errors": 7,
+      "grey_zone": 14,
+      "small_errors": 19,
+      "mid_end_mistakes": 13,
+      "early_mega": false,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202869,
+      "score_notes": [
+        "récence",
+        "mix sévérités",
+        "zone grise (14)",
+        "longueur idéale"
+      ]
+    },
+    {
+      "id": 106,
+      "opponent": "Zarybot2",
+      "year": 2026,
+      "month": 7,
+      "result": "W+Resign",
+      "total_moves": 112,
+      "player_moves": 56,
+      "errors": 13,
+      "big_errors": 1,
+      "grey_zone": 9,
+      "small_errors": 12,
+      "mid_end_mistakes": 8,
+      "early_mega": false,
+      "excluded": false,
+      "exclude_reason": "",
+      "score": 202869,
+      "score_notes": [
+        "récence",
+        "mix sévérités",
+        "zone grise (9)",
+        "longueur idéale"
+      ]
+    }
+  ],
+  "selection_reason": "Top score : récence + mix sévérités + zone grise + longueur"
+}

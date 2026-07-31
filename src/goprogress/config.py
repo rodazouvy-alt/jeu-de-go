@@ -37,4 +37,6 @@ def resolve_path(relative: str) -> Path:
 def ensure_data_dirs(cfg: dict[str, Any]) -> None:
     for key in ("sgf_dir", "analysis_dir", "reports_dir"):
         resolve_path(cfg["paths"][key]).mkdir(parents=True, exist_ok=True)
+    review_dir = cfg.get("review", {}).get("output_dir", "data/review_sgf")
+    resolve_path(review_dir).mkdir(parents=True, exist_ok=True)
     resolve_path(cfg["paths"]["db_path"]).parent.mkdir(parents=True, exist_ok=True)

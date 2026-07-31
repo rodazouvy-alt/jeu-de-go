@@ -1,0 +1,8 @@
+strategy_id,strategy_name,n_positions,n_deep,best_move_match_pct,point_loss_delta_mean,point_loss_delta_p95,severity_match_pct,rank_flip_pct,gpu_total
+S0,quick_only,92,0,76.09,0.391,1.24,71.74,17.39,0.0
+S1,current,92,38,73.91,0.468,1.42,69.57,33.7,175.3
+S2,flat_1000,92,38,73.91,0.559,1.52,71.74,33.7,23.2
+S3,skip_obvious,92,39,72.83,0.49,1.47,68.48,34.78,22.4
+S4,top3_loss_2000,92,9,76.09,0.401,1.3,69.57,18.48,23.7
+S5,tiered_loss,92,12,75.0,0.428,1.32,69.57,23.91,3.6
+S6,top2_ambiguous_2000,92,38,73.91,0.543,1.47,70.65,32.61,14.7

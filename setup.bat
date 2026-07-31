@@ -19,8 +19,10 @@ echo.
 echo Installation terminee.
 echo.
 echo Prochaines etapes :
-echo   1. setup.bat          (deja fait si vous relancez)
-echo   2. run_test.bat       (sync + analyse + rapport sur 3 parties)
-echo   3. start.bat          (dashboard local)
+echo   1. setup.bat                         (deja fait si vous relancez)
+echo   2. scripts\occasionnel\run_test.bat  (sync + analyse + rapport sur 3 parties)
+echo   3. start.bat                         (dashboard local)
+echo.
+echo Voir scripts\LISEZMOI.txt pour la liste complete des scripts.
 echo.
 pause
